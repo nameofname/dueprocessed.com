@@ -10,6 +10,6 @@
 
 This is a simple environment for theme and plugin development. Note:
 
-* WordPress will be available at `http://localhost:8000`
+* WordPress will be available at [http://localhost:8000](http://localhost:8000)
 * the `wp-content` folder you'll find in this repo will be shared with the WordPress installation, put your code there.
 
