@@ -1,4 +1,4 @@
-# Docker-based WordPress development for dueprocessed.org
+# Docker-based WordPress development for dueprocessed.com
 
 ## Usage
 
