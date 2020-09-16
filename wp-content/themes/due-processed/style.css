@@ -47,6 +47,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+@font-face {
+	font-family: "IBM Plex Serif Light";
+	src: url(./fonts/IBMPlexSerif-Light.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Serif Medium";
+	src: url(./fonts/IBMPlexSerif-Medium.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans Light";
+	src: url(./fonts/WorkSans-Light.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
 
 /*--------------------------------------------------------------
 # Generic
@@ -395,15 +415,18 @@ html {
 /* Typography
 --------------------------------------------- */
 body,
-button,
 input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	line-height: 1.5;
+	color: #151515;
+	font-size: 1.6rem;
+	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+}
+
+button {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 h1,
@@ -435,7 +458,7 @@ address {
 }
 
 pre {
-	background: #eee;
+	background: #f5f5f5;
 	font-family: "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -453,13 +476,13 @@ var {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted #5f5f5f;
 	cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
+	background: #f5f5f5;
 	text-decoration: none;
 }
 
@@ -469,6 +492,10 @@ big {
 
 /* Elements
 --------------------------------------------- */
+html {
+	font-size: 62.5%;
+}
+
 body {
 	background: #fff;
 }
@@ -531,17 +558,22 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #007db3;
+	text-decoration: none;
 }
 
 a:visited {
-	color: #800080;
+	color: #007db3;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #191970;
+	color: #007db3;
 }
 
 a:focus {
@@ -559,20 +591,23 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+	border: none;
+	background: #151515;
+	color: #fff;
+	height: 40px;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	opacity: 0.85;
 }
 
 button:active,
@@ -583,7 +618,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	opacity: 0.85;
 }
 
 input[type="text"],
@@ -602,10 +637,11 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
+	color: #151515;
 	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 40px;
 }
 
 input[type="text"]:focus,
@@ -624,7 +660,9 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: #151515;
+	border-color: #151515;
+	outline: none;
 }
 
 select {
@@ -912,12 +950,12 @@ textarea {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: #f5f5f5;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: #151515;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;

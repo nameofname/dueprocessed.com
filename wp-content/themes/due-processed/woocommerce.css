@@ -3,6 +3,26 @@ Theme Name: Due_Processed
 
 WooCommerce styles override
 */
+@font-face {
+	font-family: "IBM Plex Serif Light";
+	src: url(./fonts/IBMPlexSerif-Light.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Serif Medium";
+	src: url(./fonts/IBMPlexSerif-Medium.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans Light";
+	src: url(./fonts/WorkSans-Light.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
 
 /**
  * Shop tables
@@ -322,7 +342,7 @@ ul.products li.product .button {
 	top: 0;
 	position: absolute;
 	left: 0;
-	color: #4169e1;
+	color: #007db3;
 }
 
 p.stars a {
@@ -346,38 +366,38 @@ p.stars a::before {
 	line-height: 1;
 	font-family: star;
 	content: "\53";
-	color: #404040;
+	color: #151515;
 	text-indent: 0;
 	opacity: 0.25;
 }
 
 p.stars a:hover ~ a::before {
 	content: "\53";
-	color: #404040;
+	color: #151515;
 	opacity: 0.25;
 }
 
 p.stars:hover a::before {
 	content: "\53";
-	color: #4169e1;
+	color: #007db3;
 	opacity: 1;
 }
 
 p.stars.selected a.active::before {
 	content: "\53";
-	color: #4169e1;
+	color: #007db3;
 	opacity: 1;
 }
 
 p.stars.selected a.active ~ a::before {
 	content: "\53";
-	color: #404040;
+	color: #151515;
 	opacity: 0.25;
 }
 
 p.stars.selected a:not(.active)::before {
 	content: "\53";
-	color: #4169e1;
+	color: #007db3;
 	opacity: 1;
 }
 
@@ -531,7 +551,7 @@ p.no-comments {
 	height: 1em;
 	cursor: ew-resize;
 	outline: none;
-	background: #4169e1;
+	background: #007db3;
 	box-sizing: border-box;
 	margin-top: -0.25em;
 	opacity: 1;
@@ -551,7 +571,7 @@ p.no-comments {
 	z-index: 1;
 	display: block;
 	border: 0;
-	background: #4169e1;
+	background: #007db3;
 }
 
 .widget_price_filter .price_slider_wrapper .ui-widget-content {
