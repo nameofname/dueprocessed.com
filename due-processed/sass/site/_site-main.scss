@@ -1,0 +1,6 @@
+.site-main {
+	@include primary-page-width();
+	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	position: relative;
+	min-height: 560px;
+}

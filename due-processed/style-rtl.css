@@ -31,7 +31,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Elements
 	- Links
 	- Forms
-## Layouts
+# Site
+   - Header
+   - Main
+   - Footer
 # Components
 	- Navigation
 	- Posts and pages
@@ -561,25 +564,20 @@ a {
 	color: #007db3;
 	text-decoration: none;
 }
-
 a:visited {
 	color: #007db3;
 }
-
 a:hover {
 	text-decoration: underline;
 }
-
 a:hover,
 a:focus,
 a:active {
 	color: #007db3;
 }
-
 a:focus {
 	outline: thin dotted;
 }
-
 a:hover,
 a:active {
 	outline: 0;
@@ -602,14 +600,12 @@ input[type="submit"] {
 	padding-left: 20px;
 	cursor: pointer;
 }
-
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	opacity: 0.85;
 }
-
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -643,7 +639,6 @@ textarea {
 	padding-left: 10px;
 	height: 40px;
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -674,8 +669,82 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Layouts
+# Site
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+	border-bottom: 1px solid #ccc;
+	height: 130px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.site-header a {
+	color: #151515;
+	text-decoration: none;
+}
+.site-header a:hover,
+.site-header a:focus,
+.site-header a:active {
+	color: #151515;
+}
+
+.site-header-top {
+	width: calc(100% - (2 * 60px));
+	max-width: 1440px;
+	margin: 0 auto;
+	display: flex;
+	height: 50px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.site-header-bottom {
+	width: calc(100% - (2 * 60px));
+	max-width: 1440px;
+	margin: 0 auto;
+	display: flex;
+	height: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.site-title {
+	font-size: 2.8rem;
+	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+}
+
+/*--------------------------------------------------------------
+## Main
+--------------------------------------------------------------*/
+.site-main {
+	width: calc(100% - (2 * 60px));
+	max-width: 1440px;
+	margin: 0 auto;
+	overflow: hidden;
+
+	/* Resolves issue with <pre> elements forcing full width. */
+	position: relative;
+	min-height: 560px;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+	background: #f5f5f5;
+	min-height: 230px;
+}
+
+.site-info {
+	width: calc(100% - (2 * 60px));
+	max-width: 1440px;
+	margin: 0 auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
 
 /*--------------------------------------------------------------
 # Components
@@ -687,14 +756,12 @@ textarea {
 	display: block;
 	width: 100%;
 }
-
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
 	padding-right: 0;
 }
-
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: right;
@@ -703,31 +770,28 @@ textarea {
 	right: -999em;
 	z-index: 99999;
 }
-
 .main-navigation ul ul ul {
 	right: -999em;
 	top: 0;
 }
-
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
 	right: auto;
 }
-
 .main-navigation ul ul a {
 	width: 200px;
 }
-
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	right: auto;
 }
-
 .main-navigation li {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	position: relative;
+	margin-left: 50px;
 }
-
 .main-navigation a {
 	display: block;
 	text-decoration: none;
@@ -740,11 +804,9 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
@@ -818,7 +880,6 @@ textarea {
 .widget {
 	margin: 0 0 1.5em;
 }
-
 .widget select {
 	max-width: 100%;
 }
@@ -845,13 +906,11 @@ textarea {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
-
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
 }
-
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
@@ -948,7 +1007,6 @@ textarea {
 	width: 1px;
 	word-wrap: normal !important;
 }
-
 .screen-reader-text:focus {
 	background-color: #f5f5f5;
 	border-radius: 3px;

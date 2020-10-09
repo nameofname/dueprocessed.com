@@ -17,7 +17,7 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 	}
 }
 
-@mixin font-header($size: small) {
+@mixin font-header($size: small, $type: normal) {
 	$size-map: (
 		small: 2.2rem,
 		large: 2.8rem,

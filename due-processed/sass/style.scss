@@ -31,7 +31,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Elements
 	- Links
 	- Forms
-## Layouts
+# Site
+   - Header
+   - Main
+   - Footer
 # Components
 	- Navigation
 	- Posts and pages
@@ -69,10 +72,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "base/base";
 
 /*--------------------------------------------------------------
-# Layouts
+# Site
 --------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+
+@import "site/site";
 
 /*--------------------------------------------------------------
 # Components

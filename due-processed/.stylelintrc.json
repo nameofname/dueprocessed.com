@@ -8,6 +8,8 @@
     "no-duplicate-selectors": null,
     "font-family-no-duplicate-names": null,
     "selector-class-pattern": null,
-    "at-rule-empty-line-before": null
+    "at-rule-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "declaration-colon-newline-after": null
   }
 }

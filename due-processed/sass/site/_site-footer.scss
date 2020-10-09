@@ -1,0 +1,10 @@
+.site-footer {
+	background: $color__background-secondary;
+	min-height: 230px;
+}
+
+.site-info {
+	@include primary-page-width();
+	padding-top: $spacing__large;
+	padding-bottom: $spacing__large;
+}
