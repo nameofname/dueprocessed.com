@@ -839,6 +839,12 @@ textarea {
 	flex: 1 0 50%;
 }
 
+/* content components
+--------------------------------------------- */
+.entry-meta-divider {
+	padding: 0 5px;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -854,6 +860,14 @@ textarea {
 	display: none;
 }
 
+.page-header {
+	text-align: center;
+}
+
+.page-title {
+	font-size: 28px;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -863,6 +877,16 @@ textarea {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/* search page
+--------------------------------------------- */
+.search-results-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	max-width: 1094px;
+	margin: 0 auto;
 }
 
 /* Comments

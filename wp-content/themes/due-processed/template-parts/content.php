@@ -19,14 +19,8 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				due_processed_posted_on();
-				due_processed_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+			due_processed_categories_list();
+		endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php due_processed_post_thumbnail(); ?>
