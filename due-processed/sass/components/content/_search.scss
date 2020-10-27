@@ -1,0 +1,7 @@
+.search-results-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	max-width: 1094px;
+	margin: 0 auto;
+}

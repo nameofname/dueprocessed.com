@@ -17,12 +17,28 @@ get_header();
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
+					// Custom search results subheading
+					global $wp_query;
+					$posts_found    = $wp_query->found_posts;
+					$query_value = get_search_query( false );
+					if ( $posts_found ) {
+						// # results for "<query>"
+						$subheading = sprintf(
+							esc_html__( '%1$s %2$s for "%3$s"', 'due-processed' ),
+							$posts_found,
+							$posts_found === 1 ? 'result' : 'results',
+							$query_value
+						);
+					} else {
+						$subheading = esc_html__('No results for "'. $query_value .'"', 'due-processed');
+					}
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'due-processed' ), '<span>' . get_search_query() . '</span>' );
+					printf( normalize_whitespace($subheading) );
 					?>
 				</h1>
 			</header><!-- .page-header -->
 
+			<div class="search-results-wrapper">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -38,8 +54,10 @@ get_header();
 			endwhile;
 
 			the_posts_navigation();
+			?>
 
-		else :
+		<?php 
+			else :
 
 			get_template_part( 'template-parts/content', 'none' );
 

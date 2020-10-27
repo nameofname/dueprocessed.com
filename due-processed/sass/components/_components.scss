@@ -2,9 +2,17 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* content components
+--------------------------------------------- */
+@import "content/meta";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
+
+/* search page
+--------------------------------------------- */
+@import "content/search";
 
 /* Comments
 --------------------------------------------- */

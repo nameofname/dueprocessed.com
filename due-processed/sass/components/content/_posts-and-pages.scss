@@ -11,6 +11,14 @@
 	display: none;
 }
 
+.page-header {
+	text-align: center;
+}
+
+.page-title {
+	font-size: 28px; // create reusable class for headers
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
