@@ -22,6 +22,10 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 		small: 2.2rem,
 		large: 2.8rem,
 	);
+	$line-height-map: (
+		small: 3rem,
+		large: 3.6rem,
+	);
 	$type-map: (
 		normal: "IBM Plex Serif Medium",
 	);
@@ -30,9 +34,11 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 	@if ($size = small) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = large) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else {
 		@error "#{$size} not supported.";
 	}
@@ -44,6 +50,11 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 		medium: 1.6rem,
 		large: 2rem,
 	);
+	$line-height-map: (
+		small: 2rem,
+		medium: 2.4rem,
+		large: 3rem,
+	);
 	$type-map: (
 		normal: "IBM Plex Serif Light",
 		heavy: "IBM Plex Serif Medium",
@@ -53,18 +64,23 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 	@if ($size = small and $type = heavy) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = small and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = medium and $type = heavy) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = medium and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = large and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
+		line-height: map-get($line-height-map, $size);
 	} @else {
 		@error "#{$size} and #{$type} combination not supported.";
 	}
