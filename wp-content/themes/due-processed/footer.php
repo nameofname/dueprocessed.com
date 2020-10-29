@@ -13,17 +13,10 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'due-processed' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'due-processed' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'due-processed' ), 'due-processed', 'Theme Author' );
-				?>
+			<?php
+			/* translators: %s: CMS name, i.e. WordPress. */
+			printf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), get_bloginfo('name') );	
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

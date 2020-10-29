@@ -425,6 +425,7 @@ textarea {
 	color: #151515;
 	font-size: 1.6rem;
 	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	line-height: 2.4rem;
 }
 
 button {
@@ -439,6 +440,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 0;
 }
 
 p {
@@ -561,11 +563,11 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #007db3;
+	color: #005b83;
 	text-decoration: none;
 }
 a:visited {
-	color: #007db3;
+	color: #005b83;
 }
 a:hover {
 	text-decoration: underline;
@@ -573,7 +575,7 @@ a:hover {
 a:hover,
 a:focus,
 a:active {
-	color: #007db3;
+	color: #005b83;
 }
 a:focus {
 	outline: thin dotted;
@@ -585,6 +587,7 @@ a:active {
 
 /* Forms
 --------------------------------------------- */
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -592,7 +595,7 @@ input[type="submit"] {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	border: none;
-	background: #151515;
+	background: #005b83;
 	color: #fff;
 	height: 40px;
 	line-height: 1;
@@ -600,12 +603,16 @@ input[type="submit"] {
 	padding-left: 20px;
 	cursor: pointer;
 }
+.button:hover,
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	opacity: 0.85;
+	color: #fff;
 }
+.button:active,
+.button:focus,
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -615,6 +622,19 @@ input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	opacity: 0.85;
+}
+.button:visited,
+button:visited,
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited {
+	opacity: 1;
+}
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
 input[type="text"],
@@ -714,6 +734,7 @@ textarea {
 .site-title {
 	font-size: 2.8rem;
 	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	line-height: 3.6rem;
 }
 
 /*--------------------------------------------------------------
@@ -845,6 +866,35 @@ textarea {
 	padding: 0 5px;
 }
 
+/* content components
+--------------------------------------------- */
+.featured-article-container {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	background: #e3eff4;
+	max-height: 450px;
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+
+.featured-article-content {
+	max-width: 527px;
+	margin: 89px 60px 0 0;
+}
+
+.featured-article-header {
+	font-size: 2.8rem;
+	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	line-height: 3.6rem;
+}
+
+.featured-article-lede {
+	font-size: 1.6rem;
+	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	line-height: 2.4rem;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -865,7 +915,11 @@ textarea {
 }
 
 .page-title {
-	font-size: 28px;
+	margin: 30px 0 20px;
+	text-align: center;
+	font-size: 2.8rem;
+	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	line-height: 3.6rem;
 }
 
 .page-content,
