@@ -441,8 +441,34 @@ h6 {
 	clear: both;
 }
 
+h1 {
+	font-size: 2.8rem;
+	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+}
+
+h2 {
+	font-size: 2.2rem;
+	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+}
+
+h3 {
+	font-size: 2rem;
+	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+}
+
+h4 {
+	font-size: 1.6rem;
+	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+}
+
+h5,
+h6 {
+	font-size: 1.2rem;
+	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+}
+
 p {
-	margin-bottom: 1.5em;
+	margin: 30px 0;
 }
 
 dfn,
@@ -728,6 +754,8 @@ textarea {
 	/* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 	min-height: 560px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -847,7 +875,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -857,12 +885,47 @@ textarea {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.single-post .post,
+.single-post .post-navigation {
+	display: grid;
+	grid-template-columns: 1fr 1fr 232px;
+	margin: 0 auto;
+	width: 872px;
+}
+
+.single-post .post {
+	position: relative;
+}
+
+.single-post .post-thumbnail {
+	grid-row: 1;
+	grid-column: 1 / 4;
+}
+
+.single-post .entry-footer {
+	grid-row: 2;
+	grid-column: 1 / 4;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.single-post .entry-header {
+	grid-row: 3;
+	grid-column: 1 / 4;
+	text-align: center;
+}
+
+.single-post .entry-content {
+	grid-row: 4;
+	grid-column: 1 / 3;
 }
 
 /* Comments

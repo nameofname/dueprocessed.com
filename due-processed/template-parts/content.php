@@ -10,6 +10,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if ( is_singular() ) :
+		due_processed_post_thumbnail();
+	endif;
+	?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -29,7 +35,11 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php due_processed_post_thumbnail(); ?>
+	<?php
+	if ( !is_singular() ) :
+		due_processed_post_thumbnail();
+	endif;
+	?>
 
 	<div class="entry-content">
 		<?php

@@ -3,4 +3,6 @@
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 	min-height: 560px;
+	margin-top: $spacing__x-large;
+	margin-bottom: $spacing__x-large;
 }

@@ -6,3 +6,24 @@ h5,
 h6 {
 	clear: both;
 }
+
+h1 {
+	@include font-header($size: large);
+}
+
+h2 {
+	@include font-header($size: small);
+}
+
+h3 {
+	@include font-body($size: large);
+}
+
+h4 {
+	@include font-body($size: medium);
+}
+
+h5,
+h6 {
+	@include font-body($size: small);
+}

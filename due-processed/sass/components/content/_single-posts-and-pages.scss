@@ -1,0 +1,35 @@
+.single-post {
+	.post,
+	.post-navigation {
+		display: grid;
+		grid-template-columns: 1fr 1fr 232px;
+		margin: 0 auto;
+		width: 872px;
+	}
+	.post {
+		position: relative;
+	}
+
+	.post-thumbnail {
+		grid-row: 1;
+		grid-column: 1 / 4;
+	}
+
+	.entry-footer {
+		grid-row: 2;
+		grid-column: 1 / 4;
+		text-align: center;
+		margin-top: $spacing__large;
+	}
+
+	.entry-header {
+		grid-row: 3;
+		grid-column: 1 / 4;
+		text-align: center;
+	}
+
+	.entry-content {
+		grid-row: 4;
+		grid-column: 1 / 3;
+	}
+}
