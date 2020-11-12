@@ -51,15 +51,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 @font-face {
-	font-family: "IBM Plex Serif Light";
-	src: url(./fonts/IBMPlexSerif-Light.woff2) format("woff");
+	font-family: "Lora Regular";
+	src: url(./fonts/Lora-Regular.woff2) format("woff");
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "IBM Plex Serif Medium";
-	src: url(./fonts/IBMPlexSerif-Medium.woff2) format("woff");
+	font-family: "Lora Medium";
+	src: url(./fonts/Lora-Medium.woff2) format("woff");
 	font-style: normal;
 	font-display: swap;
 }
@@ -68,6 +68,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-family: "Work Sans Light";
 	src: url(./fonts/WorkSans-Light.woff2) format("woff");
 	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lora Regular";
+	src: url(./fonts/Lora-Italic.woff2) format("woff");
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lora Medium";
+	src: url(./fonts/Lora-MediumItalic.woff2) format("woff");
+	font-style: italic;
 	font-display: swap;
 }
 
@@ -424,7 +438,8 @@ optgroup,
 textarea {
 	color: #151515;
 	font-size: 1.6rem;
-	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
 }
 
 button {
@@ -443,28 +458,33 @@ h6 {
 
 h1 {
 	font-size: 2.8rem;
-	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 36px;
 }
 
 h2 {
 	font-size: 2.2rem;
-	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 36px;
 }
 
 h3 {
 	font-size: 2rem;
-	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
 }
 
 h4 {
 	font-size: 1.6rem;
-	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
 }
 
 h5,
 h6 {
 	font-size: 1.2rem;
-	font-family: "IBM Plex Serif Light", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
 }
 
 p {
@@ -739,7 +759,8 @@ textarea {
 
 .site-title {
 	font-size: 2.8rem;
-	font-family: "IBM Plex Serif Medium", georgia, "Times New Roman", times, serif;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 36px;
 }
 
 /*--------------------------------------------------------------
