@@ -3,8 +3,11 @@ services:
    db:
      image: mysql:5.7
      volumes:
-       - db_data:/var/lib/mysql
+       - due_processed_db_data:/var/lib/mysql
+       - ./sql-dumps:/docker-entrypoint-initdb.d
      restart: always
+     ports:
+       - '3307:3306'
      environment:
        MYSQL_ROOT_PASSWORD: password
        MYSQL_DATABASE: wordpress
@@ -24,4 +27,4 @@ services:
        WORDPRESS_DB_USER: user
        WORDPRESS_DB_PASSWORD: password
 volumes:
-    db_data:
+    due_processed_db_data:
