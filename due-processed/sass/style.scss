@@ -78,6 +78,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "site/site";
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+@import "pages/pages";
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 @import "components/components";

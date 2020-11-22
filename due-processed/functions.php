@@ -184,3 +184,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load custom block
+ */
+function custom_paragraph_block_init() {
+
+	wp_register_script(
+		'custom-paragraph',
+		get_template_directory_uri() . '/js/custom-paragraph.js',
+		array( 'wp-rich-text', 'wp-element', 'wp-editor' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'custom-paragraph.js' )
+	);
+
+	wp_register_style(
+		'custom-paragraph-style',
+		get_template_directory_uri() . '/block-styles/custom-paragraph.css',
+		array( ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'custom-paragraph.css' )
+	);
+
+	register_block_type( 'due-processed/custom-paragraph', array(
+		'style' => 'custom-paragraph-style',
+		'editor_script' => 'custom-paragraph',
+	) );
+ 
+}
+
+add_action('init', 'custom_paragraph_block_init');
