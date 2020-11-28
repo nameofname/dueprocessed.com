@@ -1,8 +1,11 @@
 .page-id-7 .site-main {
+  margin: 0;
+  width: 100vw; }
+
+.page-id-7 .about-container {
   display: flex;
   justify-content: center;
   line-height: 30px;
-  margin: 0;
   width: 100vw; }
 
 .page-id-7 h1,

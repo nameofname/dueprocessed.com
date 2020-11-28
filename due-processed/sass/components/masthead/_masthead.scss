@@ -1,0 +1,37 @@
+.masthead-header {
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	margin-bottom: 40px;
+}
+
+.masthead {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.masthead-item {
+	padding: 0 30px;
+	text-align: center;
+}
+
+.masthead-image {
+	min-width: 141px;
+	min-height: 141px;
+	width: 141px;
+	height: 141px;
+	background-color: #ccc;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+
+.masthead-title {
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+	font-size: 16px;
+	margin: 0 0 10px;
+}
+
+.masthead-name {
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	font-size: 20px;
+	margin: 0;
+}
