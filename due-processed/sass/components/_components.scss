@@ -2,10 +2,22 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* content components
+--------------------------------------------- */
+@import "content/meta";
+
+/* content components
+--------------------------------------------- */
+@import "content/featured-article";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
 @import "content/single-posts-and-pages";
+
+/* search page
+--------------------------------------------- */
+@import "content/search";
 
 /* Comments
 --------------------------------------------- */

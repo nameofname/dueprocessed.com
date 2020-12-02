@@ -15,4 +15,7 @@
 	width: calc(100% - (2 * 60px));
 	max-width: 1440px;
 	margin: 0 auto;
+	@include breakpoint-below(tablet-portrait) {
+		width: calc(100% - (2 * 20px));
+	}
 }

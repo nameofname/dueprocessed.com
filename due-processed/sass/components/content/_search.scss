@@ -1,0 +1,35 @@
+.search-results-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	max-width: 1094px;
+	margin: 0 auto;
+	@include breakpoint-below(tablet-portrait) {
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+		max-width: 375px;
+	}
+	> .post {
+		@include breakpoint-below(tablet-portrait) {
+			border-bottom: 1px solid $color__border;
+			padding: 20px 0;
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		> .entry-summary {
+			> p {
+				margin: 5px 0;
+			}
+		}
+	}
+}
+
+.search-results-page-title {
+	@include breakpoint-below(tablet-portrait) {
+		text-align: left;
+	}
+}

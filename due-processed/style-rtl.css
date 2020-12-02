@@ -85,6 +85,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-display: swap;
 }
 
+/* stylelint-disable function-name-case */
+
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -439,7 +441,7 @@ textarea {
 	color: #151515;
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 button {
@@ -454,12 +456,13 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 0;
 }
 
 h1 {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 }
 
 h2 {
@@ -471,13 +474,13 @@ h2 {
 h3 {
 	font-size: 2rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 30px;
 }
 
 h4 {
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 h5,
@@ -607,11 +610,11 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #007db3;
+	color: #005b83;
 	text-decoration: none;
 }
 a:visited {
-	color: #007db3;
+	color: #005b83;
 }
 a:hover {
 	text-decoration: underline;
@@ -619,7 +622,7 @@ a:hover {
 a:hover,
 a:focus,
 a:active {
-	color: #007db3;
+	color: #005b83;
 }
 a:focus {
 	outline: thin dotted;
@@ -631,6 +634,7 @@ a:active {
 
 /* Forms
 --------------------------------------------- */
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -638,7 +642,7 @@ input[type="submit"] {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	border: none;
-	background: #151515;
+	background: #005b83;
 	color: #fff;
 	height: 40px;
 	line-height: 1;
@@ -646,12 +650,16 @@ input[type="submit"] {
 	padding-left: 20px;
 	cursor: pointer;
 }
+.button:hover,
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	opacity: 0.85;
+	color: #fff;
 }
+.button:active,
+.button:focus,
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -661,6 +669,19 @@ input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	opacity: 0.85;
+}
+.button:visited,
+button:visited,
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited {
+	opacity: 1;
+}
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
 input[type="text"],
@@ -746,6 +767,11 @@ textarea {
 	align-items: center;
 	justify-content: space-between;
 }
+@media (max-width: 768px) {
+	.site-header-top {
+		width: calc(100% - (2 * 20px));
+	}
+}
 
 .site-header-bottom {
 	width: calc(100% - (2 * 60px));
@@ -756,11 +782,16 @@ textarea {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+@media (max-width: 768px) {
+	.site-header-bottom {
+		width: calc(100% - (2 * 20px));
+	}
+}
 
 .site-title {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -778,6 +809,16 @@ textarea {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
+@media (max-width: 768px) {
+	.site-main {
+		width: calc(100% - (2 * 20px));
+	}
+}
+@media (max-width: 768px) {
+	.site-main {
+		margin-top: 0;
+	}
+}
 
 /*--------------------------------------------------------------
 ## Footer
@@ -793,6 +834,11 @@ textarea {
 	margin: 0 auto;
 	padding-top: 40px;
 	padding-bottom: 40px;
+}
+@media (max-width: 768px) {
+	.site-info {
+		width: calc(100% - (2 * 20px));
+	}
 }
 
 /*--------------------------------------------------------------
@@ -888,6 +934,41 @@ textarea {
 	flex: 1 0 50%;
 }
 
+/* content components
+--------------------------------------------- */
+.entry-meta-divider {
+	padding: 0 5px;
+}
+
+/* content components
+--------------------------------------------- */
+.featured-article-container {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	background: #e3eff4;
+	max-height: 450px;
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+
+.featured-article-content {
+	max-width: 527px;
+	margin: 89px 60px 0 0;
+}
+
+.featured-article-header {
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
+}
+
+.featured-article-lede {
+	font-size: 1.6rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 24px;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -901,6 +982,18 @@ textarea {
 
 .updated:not(.published) {
 	display: none;
+}
+
+.page-header {
+	text-align: center;
+}
+
+.page-title {
+	margin: 30px 0 20px;
+	text-align: center;
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
 }
 
 .page-content,
@@ -947,6 +1040,44 @@ textarea {
 .single-post .entry-content {
 	grid-row: 4;
 	grid-column: 1 / 3;
+}
+
+/* search page
+--------------------------------------------- */
+.search-results-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	max-width: 1094px;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.search-results-wrapper {
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+		max-width: 375px;
+	}
+}
+@media (max-width: 768px) {
+	.search-results-wrapper > .post {
+		border-bottom: 1px solid #ccc;
+		padding: 20px 0;
+	}
+	.search-results-wrapper > .post:first-child {
+		padding-top: 0;
+	}
+	.search-results-wrapper > .post:last-child {
+		border-bottom: 0;
+	}
+}
+.search-results-wrapper > .post > .entry-summary > p {
+	margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+	.search-results-page-title {
+		text-align: right;
+	}
 }
 
 /* Comments

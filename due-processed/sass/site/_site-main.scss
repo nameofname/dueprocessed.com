@@ -5,4 +5,7 @@
 	min-height: 560px;
 	margin-top: $spacing__x-large;
 	margin-bottom: $spacing__x-large;
+	@include breakpoint-below(tablet-portrait) {
+		margin-top: 0;
+	}
 }

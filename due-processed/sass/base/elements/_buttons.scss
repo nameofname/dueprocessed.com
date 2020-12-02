@@ -1,3 +1,4 @@
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -14,10 +15,20 @@ input[type="submit"] {
 
 	&:hover {
 		opacity: 0.85;
+		color: $color__text-button;
 	}
 
 	&:active,
 	&:focus {
 		opacity: 0.85;
 	}
+
+	&:visited {
+		opacity: 1;
+	}
+}
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }

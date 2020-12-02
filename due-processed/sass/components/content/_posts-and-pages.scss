@@ -11,6 +11,16 @@
 	display: none;
 }
 
+.page-header {
+	text-align: center;
+}
+
+.page-title {
+	margin: $spacing__medium 0 $spacing__small;
+	text-align: center;
+	@include font-header($size: large);
+}
+
 .page-content,
 .entry-content,
 .entry-summary {

@@ -36,6 +36,10 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 		small: 2.2rem,
 		large: 2.8rem,
 	);
+	$line-height-map: (
+		small: 36px,
+		large: 30px,
+	);
 	$type-map: (
 		normal: "Lora Medium",
 	);
@@ -44,11 +48,11 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 	@if ($size = small) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 36px;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = large) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 30px;
+		line-height: map-get($line-height-map, $size);
 	} @else {
 		@error "#{$size} not supported.";
 	}
@@ -60,6 +64,11 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 		medium: 1.6rem,
 		large: 2rem,
 	);
+	$line-height-map: (
+		small: 20px,
+		medium: 24px,
+		large: 30px,
+	);
 	$type-map: (
 		normal: "Lora Regular",
 		heavy: "Lora Medium",
@@ -69,24 +78,24 @@ $__INTERNAL_USE_ONLY_SANS_BACKUPS__: "Helvetica Neue", helvetica, arial,
 	@if ($size = small and $type = heavy) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 20px;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = small and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 20px;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = medium and $type = heavy) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
 		font-style: italic;
-		line-height: 24px;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = medium and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 24px;
+		line-height: map-get($line-height-map, $size);
 	} @else if ($size = large and $type = normal) {
 		font-size: map-get($size-map, $size);
 		font-family: map-get($type-map, $type), $back-up;
-		line-height: 30px;
+		line-height: map-get($line-height-map, $size);
 	} @else {
 		@error "#{$size} and #{$type} combination not supported.";
 	}
