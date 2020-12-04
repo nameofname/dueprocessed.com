@@ -213,28 +213,7 @@ function custom_paragraph_block_init() {
 
 add_action('init', 'custom_paragraph_block_init');
 
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
-
-function crb_attach_theme_options() {
-    Container::make( 'theme_options', __( 'Theme Options' ) )
-        ->add_fields( array(
-            Field::make( 'text', 'crb_text', 'Text Field' ),
-        ) );
-}
-add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
-
-function crb_attach_post_meta() {
-	Container::make( 'post_meta', __( 'Page Options' ) )
-		->where( 'post_id', '=', '7' ) // 7 is the id of the about page
-		->add_fields( array(
-			Field::make( 'complex', 'authors', 'Authors' )
-				->set_layout( 'tabbed-horizontal' )
-				->add_fields( array(
-					Field::make( 'image', 'image', 'Image' ),
-					Field::make( 'text', 'title', 'Title' ),
-					Field::make( 'text', 'name', 'Name' ),
-				) ),
-		) );
-}
-add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
+/**
+ * Implement the masthead feature
+ */
+require get_template_directory() . '/inc/masthead.php';

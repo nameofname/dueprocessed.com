@@ -14,8 +14,6 @@ get_header();
 			<?php
 			// Authors
 			$authors = carbon_get_the_post_meta( 'authors' );
-			echo $authors;
-			echo count($authors);
 			if( $authors ):?>
 				<h1 class='masthead-header'>Authors</h1>
 				<div class='masthead'>
@@ -28,11 +26,6 @@ get_header();
 					<?php endforeach; ?>
 				</div>
 			<?php endif;
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>

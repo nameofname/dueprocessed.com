@@ -7,13 +7,12 @@
 	.about-container {
 		display: flex;
 		justify-content: center;
-		line-height: 30px;
 		width: 100vw;
 	}
 
 	h1,
 	h2 {
-		font-size: 2.8rem;
+		@include font-header($size: large);
 		text-align: center;
 	}
 

@@ -604,11 +604,6 @@ table {
 	width: 100%;
 }
 
-h1,
-h2 {
-	font-size: 2.8rem;
-}
-
 /* Links
 --------------------------------------------- */
 a {
@@ -811,13 +806,14 @@ textarea {
 .page-id-7 .about-container {
 	display: flex;
 	justify-content: center;
-	line-height: 30px;
 	width: 100vw;
 }
 
 .page-id-7 h1,
 .page-id-7 h2 {
 	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 36px;
 	text-align: center;
 }
 
@@ -1086,7 +1082,9 @@ textarea {
 /* Masthead
 --------------------------------------------- */
 .masthead-header {
+	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
 	margin-bottom: 40px;
 }
 
@@ -1112,14 +1110,15 @@ textarea {
 }
 
 .masthead-title {
+	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
-	font-size: 16px;
 	margin: 0 0 10px;
 }
 
 .masthead-name {
+	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	font-size: 20px;
+	line-height: 20px;
 	margin: 0;
 }
 
