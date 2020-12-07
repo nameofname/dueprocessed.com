@@ -1,0 +1,83 @@
+/* Shared
+--------------------------------------------- */
+.footnote-wrapper {
+	@include font-body($size: small);
+}
+
+.footnote-anchor {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.footnote a {
+	text-decoration: none;
+}
+
+.footnote-note {
+	display: grid;
+	grid-template-columns: 15px 1fr;
+	cursor: pointer;
+	a {
+		overflow-wrap: break-word;
+	}
+
+	.footnote-hidden & {
+		visibility: hidden;
+	}
+}
+
+.footnote-note-sep {
+	margin-left: 3px;
+	color: $color__border;
+}
+
+
+/* Stacked (Desktop + Tablet) Layout
+--------------------------------------------- */
+.footnote-stacked {
+	.footnote-note {
+		padding: $spacing__x-small;
+		position: absolute;
+		right: 0;
+		width: 206px;
+		margin-right: 1px; // tolerance needed for box-shadow display
+	}
+
+	.footnote-note-content {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+	}
+
+	&.footnote-open {
+		.footnote-note {
+			background: $color__background-body;
+			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
+			z-index: 3;
+		}
+
+		.footnote-note-content {
+			display: block;
+			overflow: auto;
+		}
+	}
+}
+
+/* Inline (Mobile) Layout
+--------------------------------------------- */
+.footnote-inline {
+	.footnote-note {
+		display: none;
+		background: $color__background-secondary;
+		padding: $spacing__x-small $spacing__x-large $spacing__x-small
+			$spacing__small;
+		margin: $spacing__x-small 0;
+	}
+
+	&.footnote-open {
+		.footnote-note {
+			display: grid;
+		}
+	}
+}

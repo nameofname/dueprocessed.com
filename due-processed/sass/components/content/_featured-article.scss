@@ -1,0 +1,27 @@
+.featured-article-wrapper {
+	// entire carousel
+}
+.featured-article-container {
+	// single carousel element
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	background: $color__background-secondary;
+	max-height: 450px;
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+.featured-article-content {
+	max-width: 527px;
+	margin: 89px 0 0 60px;
+}
+.featured-article-header {
+	// h3
+	@include font-header($size: "large");
+}
+.featured-article-lede {
+	// p
+	@include font-body($size: "medium");
+}
+
+.featured-article-image {}

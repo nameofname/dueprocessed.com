@@ -1,0 +1,64 @@
+/*--------------------------------------------------------------
+# Variables & Mixins
+--------------------------------------------------------------*/
+/* stylelint-disable function-name-case */
+@font-face {
+	font-family: "Lora Regular";
+	src: url(./fonts/Lora-Regular.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lora Medium";
+	src: url(./fonts/Lora-Medium.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans Light";
+	src: url(./fonts/WorkSans-Light.woff2) format("woff");
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lora Regular";
+	src: url(./fonts/Lora-Italic.woff2) format("woff");
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lora Medium";
+	src: url(./fonts/Lora-MediumItalic.woff2) format("woff");
+	font-style: italic;
+	font-display: swap;
+}
+
+/*--------------------------------------------------------------
+# Footnotes Block
+--------------------------------------------------------------*/
+/* stylelint-disable selector-type-no-unknown */
+.due-processed-footnotes-admin-button {
+	background: url(images/dpfn-editor-button.png) 4px 5px no-repeat !important;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+}
+
+.block-editor-rich-text__editable > dpfn:first-of-type::before {
+	content: "footnote";
+	color: #888;
+	font-size: 12px;
+	position: relative;
+	top: -5px;
+	margin-right: 3px;
+	margin-left: 3px;
+}
+
+dpfn {
+	background: #ccc;
+}

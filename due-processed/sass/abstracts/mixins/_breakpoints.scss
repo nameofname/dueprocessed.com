@@ -1,0 +1,75 @@
+/* stylelint-disable function-name-case */
+@function __INTERNAL_USE_ONLY_DEVICES__() {
+	$max-mobile: 568px;
+	$max-tablet-portrait: 768px;
+	$max-tablet-landscape: 1024px;
+
+	$mobile: (
+		max: $max-mobile,
+	);
+	$tablet-portrait: (
+		min: $max-mobile + 1,
+		max: $max-tablet-portrait,
+	);
+	$tablet-landscape: (
+		min: $max-tablet-portrait + 1,
+		max: $max-tablet-landscape,
+	);
+	$desktop: (
+		min: $max-tablet-landscape + 1,
+	);
+
+	@return (
+		mobile: $mobile,
+		tablet-portrait: $tablet-portrait,
+		tablet-landscape: $tablet-landscape,
+		desktop: $desktop
+	);
+}
+
+@function __INTERNAL_USE_ONLY_GET_RANGE_VALUE__(
+	$mixin-name,
+	$device-type,
+	$range-type
+) {
+	$device-types: __INTERNAL_USE_ONLY_DEVICES__();
+
+	@if map-has-key($device-types, $device-type) {
+		$device: map-get($device-types, $device-type);
+		@if map-has-key($device, $range-type) {
+			@return map-get($device, $range-type);
+		} @else {
+			@error "mixin '#{$mixin-name}' does not accept range-type '#{$range-type}' for device-type '#{$device-type}'.";
+		}
+	} @else {
+		@error "mixin '#{$mixin-name}' does not accept device-type '#{$device-type}'.";
+	}
+}
+@mixin breakpoint-below($device-type) {
+	$max: __INTERNAL_USE_ONLY_GET_RANGE_VALUE__("breakpoint-below", $device-type, max);
+	@media (max-width: $max) {
+		@content;
+	}
+}
+@mixin breakpoint-above($device-type) {
+	$min: __INTERNAL_USE_ONLY_GET_RANGE_VALUE__("breakpoint-above", $device-type, min);
+	@media (min-width: $min) {
+		@content;
+	}
+}
+@mixin breakpoint-between($min-device, $max-device: none) {
+	@if $min-device == $max-device {
+		@error "mixin 'breakpoint-between' range error: '#{$min-device}' cannot be both arguments. Use only one argument to scope only that device. Will only work for tablet sizes.'";
+	}
+	@if $max-device == none {
+		$max-device: $min-device;
+	}
+	$min: __INTERNAL_USE_ONLY_GET_RANGE_VALUE__("breakpoint-between", $min-device, min);
+	$max: __INTERNAL_USE_ONLY_GET_RANGE_VALUE__("breakpoint-between", $max-device, max);
+	@if $min >= $max {
+		@error "mixin 'breakpoint-between' range error: '#{$min-device}' min value is not less than max value of '#{$max-device}'";
+	}
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}

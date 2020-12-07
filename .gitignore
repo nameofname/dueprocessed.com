@@ -5,3 +5,5 @@ composer.lock
 style.css.map
 .DS_Store
 .vscode
+wp-content/themes/*
+!wp-content/themes/due-processed

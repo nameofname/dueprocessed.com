@@ -50,6 +50,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/* stylelint-disable function-name-case */
 @font-face {
 	font-family: "Lora Regular";
 	src: url(./fonts/Lora-Regular.woff2) format("woff");
@@ -439,7 +440,7 @@ textarea {
 	color: #151515;
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 button {
@@ -454,12 +455,13 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 0;
 }
 
 h1 {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 }
 
 h2 {
@@ -471,13 +473,13 @@ h2 {
 h3 {
 	font-size: 2rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 30px;
 }
 
 h4 {
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 h5,
@@ -607,11 +609,11 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #007db3;
+	color: #005b83;
 	text-decoration: none;
 }
 a:visited {
-	color: #007db3;
+	color: #005b83;
 }
 a:hover {
 	text-decoration: underline;
@@ -619,7 +621,7 @@ a:hover {
 a:hover,
 a:focus,
 a:active {
-	color: #007db3;
+	color: #005b83;
 }
 a:focus {
 	outline: thin dotted;
@@ -631,6 +633,7 @@ a:active {
 
 /* Forms
 --------------------------------------------- */
+.button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -638,7 +641,7 @@ input[type="submit"] {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	border: none;
-	background: #151515;
+	background: #005b83;
 	color: #fff;
 	height: 40px;
 	line-height: 1;
@@ -646,12 +649,16 @@ input[type="submit"] {
 	padding-left: 20px;
 	cursor: pointer;
 }
+.button:hover,
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	opacity: 0.85;
+	color: #fff;
 }
+.button:active,
+.button:focus,
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -661,6 +668,19 @@ input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	opacity: 0.85;
+}
+.button:visited,
+button:visited,
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited {
+	opacity: 1;
+}
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
 input[type="text"],
@@ -738,13 +758,25 @@ textarea {
 }
 
 .site-header-top {
-	width: calc(100% - (2 * 60px));
-	max-width: 1440px;
-	margin: 0 auto;
-	display: flex;
+	flex-direction: column;
 	height: 50px;
-	align-items: center;
-	justify-content: space-between;
+	margin: 0 20px;
+	display: flex;
+}
+@media (min-width: 569px) {
+	.site-header-top {
+		width: calc(100% - (2 * 60px));
+		max-width: 1440px;
+		margin: 0 auto;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+	}
+}
+@media (min-width: 569px) and (max-width: 768px) {
+	.site-header-top {
+		width: calc(100% - (2 * 20px));
+	}
 }
 
 .site-header-bottom {
@@ -756,27 +788,42 @@ textarea {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+@media (max-width: 768px) {
+	.site-header-bottom {
+		width: calc(100% - (2 * 20px));
+	}
+}
 
 .site-title {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 }
 
 /*--------------------------------------------------------------
 ## Main
 --------------------------------------------------------------*/
 .site-main {
-	width: calc(100% - (2 * 60px));
-	max-width: 1440px;
-	margin: 0 auto;
+	margin: 20px;
 	overflow: hidden;
 
 	/* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
-	min-height: 560px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+}
+@media (min-width: 569px) {
+	.site-main {
+		width: calc(100% - (2 * 60px));
+		max-width: 1440px;
+		margin: 0 auto;
+		min-height: 560px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+@media (min-width: 569px) and (max-width: 768px) {
+	.site-main {
+		width: calc(100% - (2 * 20px));
+	}
 }
 
 /*--------------------------------------------------------------
@@ -793,6 +840,11 @@ textarea {
 	margin: 0 auto;
 	padding-top: 40px;
 	padding-bottom: 40px;
+}
+@media (max-width: 768px) {
+	.site-info {
+		width: calc(100% - (2 * 20px));
+	}
 }
 
 /*--------------------------------------------------------------
@@ -866,6 +918,7 @@ textarea {
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	position: relative;
 	margin-left: 50px;
+	white-space: nowrap;
 }
 .main-navigation a {
 	display: block;
@@ -914,6 +967,41 @@ textarea {
 	flex: 1 0 50%;
 }
 
+/* content components
+--------------------------------------------- */
+.entry-meta-divider {
+	padding: 0 5px;
+}
+
+/* content components
+--------------------------------------------- */
+.featured-article-container {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	background: #e3eff4;
+	max-height: 450px;
+	overflow: hidden;
+	margin-bottom: 70px;
+}
+
+.featured-article-content {
+	max-width: 527px;
+	margin: 89px 60px 0 0;
+}
+
+.featured-article-header {
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
+}
+
+.featured-article-lede {
+	font-size: 1.6rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 24px;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -929,6 +1017,18 @@ textarea {
 	display: none;
 }
 
+.page-header {
+	text-align: center;
+}
+
+.page-title {
+	margin: 30px 0 20px;
+	text-align: center;
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -940,12 +1040,25 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.entry-footer,
+.entry-meta {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
 .single-post .post,
 .single-post .post-navigation {
 	display: grid;
-	grid-template-columns: 1fr 1fr 232px;
+	grid-template-columns: minmax(0, 640px) 232px;
 	margin: 0 auto;
-	width: 872px;
+	max-width: 872px;
+}
+@media (max-width: 768px) {
+	.single-post .post,
+	.single-post .post-navigation {
+		grid-template-columns: 1fr;
+		max-width: none;
+	}
 }
 
 .single-post .post {
@@ -954,25 +1067,141 @@ textarea {
 
 .single-post .post-thumbnail {
 	grid-row: 1;
-	grid-column: 1 / 4;
+	grid-column: 1 / 3;
+	margin-bottom: 40px;
 }
 
 .single-post .entry-footer {
 	grid-row: 2;
-	grid-column: 1 / 4;
+	grid-column: 1 / 3;
 	text-align: center;
-	margin-top: 40px;
 }
 
 .single-post .entry-header {
 	grid-row: 3;
-	grid-column: 1 / 4;
+	grid-column: 1 / 3;
 	text-align: center;
 }
 
 .single-post .entry-content {
 	grid-row: 4;
-	grid-column: 1 / 3;
+	grid-column: 1 / 2;
+}
+
+/* Search Page
+--------------------------------------------- */
+.search-results-wrapper {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 40px;
+	max-width: 1094px;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.search-results-wrapper {
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+		max-width: 375px;
+	}
+}
+@media (max-width: 768px) {
+	.search-results-wrapper > .post {
+		border-bottom: 1px solid #ccc;
+		padding: 20px 0;
+	}
+	.search-results-wrapper > .post:first-child {
+		padding-top: 0;
+	}
+	.search-results-wrapper > .post:last-child {
+		border-bottom: 0;
+	}
+}
+.search-results-wrapper > .post > .entry-summary > p {
+	margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+	.search-results-page-title {
+		text-align: right;
+	}
+}
+
+/* Footnotes
+--------------------------------------------- */
+
+/* Shared
+--------------------------------------------- */
+.footnote-wrapper {
+	font-size: 1.2rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
+}
+
+.footnote-anchor {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.footnote a {
+	text-decoration: none;
+}
+
+.footnote-note {
+	display: grid;
+	grid-template-columns: 15px 1fr;
+	cursor: pointer;
+}
+.footnote-note a {
+	overflow-wrap: break-word;
+}
+.footnote-hidden .footnote-note {
+	visibility: hidden;
+}
+
+.footnote-note-sep {
+	margin-right: 3px;
+	color: #ccc;
+}
+
+/* Stacked (Desktop + Tablet) Layout
+--------------------------------------------- */
+.footnote-stacked .footnote-note {
+	padding: 10px;
+	position: absolute;
+	left: 0;
+	width: 206px;
+	margin-left: 1px;
+}
+
+.footnote-stacked .footnote-note-content {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+
+.footnote-stacked.footnote-open .footnote-note {
+	background: #fff;
+	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
+	z-index: 3;
+}
+
+.footnote-stacked.footnote-open .footnote-note-content {
+	display: block;
+	overflow: auto;
+}
+
+/* Inline (Mobile) Layout
+--------------------------------------------- */
+.footnote-inline .footnote-note {
+	display: none;
+	background: #e3eff4;
+	padding: 10px 20px 10px 50px;
+	margin: 10px 0;
+}
+
+.footnote-inline.footnote-open .footnote-note {
+	display: grid;
 }
 
 /* Comments
