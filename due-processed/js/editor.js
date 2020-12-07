@@ -29,7 +29,7 @@
 	const RichText = wp.editor.RichText;
 
 	wp.blocks.registerBlockType( 'due-processed/custom-paragraph', {
-		title: 'Custom Paragraph (dueprocessed)',
+		title: 'Custom Paragraph',
 		icon: 'editor-paragraph',
 		category: 'text',
 
