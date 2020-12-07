@@ -865,7 +865,7 @@ textarea {
 .page-id-7 h2 {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 	text-align: center;
 }
 
@@ -1313,7 +1313,7 @@ textarea {
 .masthead-header {
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 	margin-bottom: 40px;
 }
 
@@ -1347,7 +1347,7 @@ textarea {
 .masthead-name {
 	font-size: 1.6rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 20px;
+	line-height: 24px;
 	margin: 0;
 }
 
@@ -1442,4 +1442,19 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Custom paragraph block styles
+--------------------------------------------- */
+.wp-block-due-processed-custom-paragraph {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	position: relative;
+	left: calc(-50vw + 50%);
+	background-color: #e3eff4;
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	width: 636px;
 }
