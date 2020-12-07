@@ -152,6 +152,17 @@ function due_processed_scripts() {
 add_action( 'wp_enqueue_scripts', 'due_processed_scripts' );
 
 /**
+ * Enqueue scripts and styles for Gutenberg editor for custom theme blocks.
+ */
+function due_processed_editor_scripts() {
+	$deps = array( 'wp-rich-text', 'wp-element', 'wp-editor', 'wp-i18n' );
+
+ 	wp_enqueue_script('due-processed-editor', get_template_directory_uri() . '/js/editor.js', $deps, DUE_PROCESSED_VERSION, true);
+ 	wp_enqueue_style('due-processed-editor-style', get_stylesheet_directory_uri() . '/editor.css', array(), DUE_PROCESSED_VERSION);
+}
+add_action( 'enqueue_block_editor_assets', 'due_processed_editor_scripts' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -165,6 +176,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions to support custom footnotes.
+ */
+require get_template_directory() . '/inc/footnotes.php';
 
 /**
  * Customizer additions.

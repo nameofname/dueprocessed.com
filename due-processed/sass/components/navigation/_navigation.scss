@@ -52,6 +52,7 @@
 		@include font-label();
 		position: relative;
 		margin-right: $spacing__x-large;
+		white-space: nowrap;
 
 		&:hover > a,
 		&.focus > a {

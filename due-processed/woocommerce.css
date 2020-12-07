@@ -3,6 +3,7 @@ Theme Name: Due_Processed
 
 WooCommerce styles override
 */
+/* stylelint-disable function-name-case */
 @font-face {
 	font-family: "Lora Regular";
 	src: url(./fonts/Lora-Regular.woff2) format("woff");
@@ -37,8 +38,6 @@ WooCommerce styles override
 	font-style: italic;
 	font-display: swap;
 }
-
-/* stylelint-disable function-name-case */
 
 /**
  * Shop tables

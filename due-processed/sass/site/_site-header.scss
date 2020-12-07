@@ -4,6 +4,7 @@
 	padding-top: $spacing__small;
 	padding-bottom: $spacing__small;
 
+
 	a {
 		color: $color__text-main;
 		text-decoration: none;
@@ -17,11 +18,16 @@
 }
 
 .site-header-top {
-	@include primary-page-width();
-	display: flex;
+	@include breakpoint-above(tablet-portrait) {
+		@include primary-page-width();
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+	}
+	flex-direction: column;
 	height: 50px;
-	align-items: center;
-	justify-content: space-between;
+	margin: 0 $spacing__small;
+	display: flex;
 }
 
 .site-header-bottom {
