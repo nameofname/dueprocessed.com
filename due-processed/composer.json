@@ -45,5 +45,11 @@
   "support": {
     "issues": "https://github.com/Automattic/_s/issues",
     "source": "https://github.com/Automattic/_s"
+  },
+  "extra": {
+    "installer-paths": {
+        "../wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "../wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
   }
 }

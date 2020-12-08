@@ -6,3 +6,5 @@ style.css.map
 .DS_Store
 wp-content/themes/*
 !wp-content/themes/due-processed
+due-processed/vendor/*
+wp-content/plugins/*
