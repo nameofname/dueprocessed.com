@@ -44,7 +44,6 @@
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "lint": "npm run lint:scss && npm run lint:js",
     "prebundle": "npm run lint && npm run compile",
-    "bundle": "dir-archiver --src . --dest ../wp-content/themes/due-processed/due-processed.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md .prettierrc composer.json composer.lock node_modules package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map",
-    "postbundle": "cd ../wp-content/themes/due-processed && unzip due-processed.zip && rm -rf due-processed.zip"
+    "bundle": "dir-archiver --src . --dest ../due-processed.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md .prettierrc composer.json composer.lock node_modules package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   }
 }
