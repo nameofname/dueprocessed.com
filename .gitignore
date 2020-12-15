@@ -8,5 +8,4 @@ wp-content/themes/*
 !wp-content/themes/due-processed
 due-processed/vendor/*
 wp-content/plugins/*
-wp-content/themes/due-processed/vendor/*
 due-processed.zip
