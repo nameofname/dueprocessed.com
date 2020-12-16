@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main site-main-about">
 
 		<?php
 		while ( have_posts() ) : the_post(); ?>
@@ -20,8 +20,10 @@ get_header();
 					<?php foreach( $authors as $author ): ?>
 						<div class='masthead-item'>
 							<?php echo wp_get_attachment_image( $author['image'], 'thumbnail', false, array('alt' => 'Author avatar', 'class' => 'masthead-image')); ?>
-							<p class='masthead-title'><?php echo $author['title']; ?></p>
-							<p class='masthead-name'><?php echo $author['name']; ?></p>
+							<div class='masthead-text'>
+								<p class='masthead-title'><?php echo $author['title']; ?></p>
+								<p class='masthead-name'><?php echo $author['name']; ?></p>
+							</div>
 						</div>
 					<?php endforeach; ?>
 				</div>
