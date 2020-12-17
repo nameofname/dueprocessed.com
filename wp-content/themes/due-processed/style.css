@@ -848,6 +848,131 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+.site-main-author {
+	overflow: visible;
+}
+
+.author-profile {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+
+.author-profile-body {
+	display: flex;
+	flex-direction: row;
+}
+@media (max-width: 768px) {
+	.author-profile-body {
+		flex-direction: column;
+	}
+}
+
+.author-profile-title-desktop {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+	margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+	.author-profile-title-desktop {
+		display: none;
+	}
+}
+
+.author-profile-name-title-container {
+	display: inline-block;
+}
+
+.author-profile-title-mobile {
+	margin-bottom: 10px;
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.author-profile-name-desktop {
+	margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+	.author-profile-name-desktop {
+		display: none;
+	}
+}
+
+.author-profile-photo-name-container-mobile {
+	display: none;
+	margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+	.author-profile-photo-name-container-mobile {
+		display: inline-block;
+	}
+}
+
+.author-profile-name-mobile {
+	display: inline-block;
+}
+
+.author-profile-photo-desktop {
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 50px;
+	min-width: 141px;
+	min-height: 141px;
+	width: 141px;
+	height: 141px;
+}
+@media (max-width: 768px) {
+	.author-profile-photo-desktop {
+		display: none;
+	}
+}
+
+.author-profile-photo-mobile {
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 20px;
+	vertical-align: top;
+	min-width: 70px;
+	min-height: 70px;
+	width: 70px;
+	height: 70px;
+}
+
+.author-profile-bio {
+	display: inline-block;
+	max-width: 676px;
+	vertical-align: top;
+	margin-right: 40px;
+}
+@media (max-width: 768px) {
+	.author-profile-bio {
+		margin: 0 0 20px;
+	}
+}
+
+.author-profile-body-right {
+	white-space: nowrap;
+}
+
+.author-profile-contact-info {
+	margin-bottom: 10px;
+}
+
+.author-profile-icon {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.author-profile-email {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
