@@ -16,7 +16,7 @@ $photo_element = get_avatar( $curauth->user_email , '90', '', '', array('class' 
 <main id="primary" class="site-main site-main-author">
 	<div class='author-profile'>
 
-			<!-- mobile photo, title, and name -->
+		<!-- mobile photo, title, and name -->
 		<div class='author-profile-photo-name-container-mobile'>
 			<?php echo get_avatar( $curauth->user_email , '90', '', '', array('class' => 'author-profile-photo-mobile')); ?>
 			<div class='author-profile-name-title-container'>
