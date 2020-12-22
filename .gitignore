@@ -9,3 +9,4 @@ wp-content/themes/*
 due-processed/vendor/*
 wp-content/plugins/*
 wp-content/themes/due-processed/vendor/*
+settings.json

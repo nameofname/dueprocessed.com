@@ -19,3 +19,12 @@
 		width: calc(100% - (2 * 20px));
 	}
 }
+
+@mixin secondary-page-width {
+	width: calc(100% - (2 * 60px));
+	max-width: 1094px;
+	margin: 0 auto;
+	@include breakpoint-below(tablet-portrait) {
+		width: calc(100% - (2 * 20px));
+	}
+}
