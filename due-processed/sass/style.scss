@@ -45,6 +45,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Galleries
 # plugins
 	- Jetpack infinite scroll
+	- Frontend Uploader
 # Utilities
 	- Accessibility
 	- Alignments
@@ -89,6 +90,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Jetpack infinite scroll
 --------------------------------------------- */
 @import "plugins/jetpack/infinite-scroll";
+/* Frontend Uploader
+--------------------------------------------- */
+@import "plugins/frontenduploader/form";
 
 /*--------------------------------------------------------------
 # Utilities

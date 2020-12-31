@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "form.css",
+	"sources": [
+		"../../sass/plugins/frontenduploader/form.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,KAAK,AAAA,MAAM,CAAC;CACR,KAAK,EAAE,GAAG;CACV,SAAS,EAAE,IAAI;CACf,WAAW,EAAE,IAAI;CACpB"
+}
