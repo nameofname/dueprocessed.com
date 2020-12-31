@@ -39,6 +39,14 @@ Once you are satisfied with your changes, commit both the changes in `./due-proc
 
 You can find additional documentation about the `_s` starter theme on [Github](https://github.com/Automattic/\_s) and [Wordpress](https://developer.wordpress.org/themes/getting-started/theme-development-examples/#the-underscores-theme).
 
-## Plugin development
+## Plugins
 
-Add plugins in `./wp-content/plugins`.
+Plugins are managed via composer so that all developers can stay up to date with the list of plugins. 
+- This applies to the dev env only! On prod plugins must be installed via the plugins page.
+- Make sure to use matching version numbers when installing on prod vs. dev. 
+
+To add a new plugin:
+- Find the plugin you want on the Wordpress Packagist registry: [https://wpackagist.org/](https://wpackagist.org/)
+- Add to your compser.json file - then `composer install`
+- Activate the plugin in the plugins admin page [http://localhost:8000/wp-admin/plugins.php](http://localhost:8000/wp-admin/plugins.php)
+Plugins will be added to `./wp-content/plugins` (see `installer-paths` in composer.json)
