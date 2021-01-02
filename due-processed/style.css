@@ -865,6 +865,15 @@ textarea {
 	}
 }
 
+.site-info-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.site-info-menu li {
+	margin-bottom: 10px;
+}
+
 .site-info-right {
 	flex: 2;
 }

@@ -23,6 +23,15 @@
 	}
 }
 
+.site-info-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		margin-bottom: $spacing__x-small;
+	}
+}
+
 .site-info-right {
 	flex: 2;
 	@include breakpoint-below(tablet-portrait) {

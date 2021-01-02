@@ -16,15 +16,15 @@ $copyright = sprintf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<div class="site-info-left">
-				<div class='site-info-row site-info-label'>
-					<a href="/?p=7">About</a>
-				</div>
-				<div class='site-info-row site-info-label'>
-					<a href="/">Submit</a> <!--TODO: add href-->
-				</div>
-				<div class='site-info-row site-info-label'>
-					<a href="/">Privacy Policy</a> <!--TODO: add href-->
-				</div>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-menu',
+						'menu_id'        => 'footer-menu',
+						'menu_class'     => 'site-info-menu',
+					)
+				);
+				?>
 				<div class='site-info-row copyright-desktop'>
 					<?php
 					echo $copyright;
