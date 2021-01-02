@@ -22,6 +22,7 @@ services:
      restart: always
      volumes:
        - ./wp-content/:/var/www/html/wp-content 
+       - ./due-processed/:/var/www/html/wp-content/themes/due-processed
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: user

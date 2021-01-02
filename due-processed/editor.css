@@ -62,3 +62,19 @@
 dpfn {
 	background: #ccc;
 }
+
+/*--------------------------------------------------------------
+# Custom Paragraph Block
+--------------------------------------------------------------*/
+.wp-block-due-processed-custom-paragraph {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	position: relative;
+	left: calc(-50vw + 50%);
+	background-color: #e3eff4;
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	width: 636px;
+}
