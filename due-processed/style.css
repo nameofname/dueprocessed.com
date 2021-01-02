@@ -912,6 +912,36 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+.site-main-about {
+	margin: 0;
+	width: 100vw;
+}
+.site-main-about .about-container {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	margin-top: 20px;
+}
+.site-main-about h1,
+.site-main-about h2 {
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
+	text-align: center;
+}
+@media (max-width: 768px) {
+	.site-main-about p {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+.site-main-about .entry-content {
+	max-width: 636px;
+}
+
+/*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
@@ -1346,6 +1376,76 @@ textarea {
 	display: block;
 }
 
+/* Masthead
+--------------------------------------------- */
+.masthead-header {
+	font-size: 1.6rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 24px;
+	margin-bottom: 40px;
+}
+
+.masthead {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+	.masthead {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.masthead-item {
+	padding: 0 30px;
+	text-align: center;
+}
+
+.masthead-image {
+	min-width: 141px;
+	min-height: 141px;
+	width: 141px;
+	height: 141px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+	.masthead-image {
+		width: 70px;
+		height: 70px;
+		min-width: 70px;
+		min-height: 70px;
+		display: inline-block;
+	}
+}
+
+@media (max-width: 768px) {
+	.masthead-text {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 11px;
+	}
+}
+
+.masthead-title {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+	margin: 0 0 10px;
+}
+@media (max-width: 768px) {
+	.masthead-title {
+		margin: 0;
+	}
+}
+
+.masthead-name {
+	font-size: 1.6rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 24px;
+	margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1437,4 +1537,19 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Custom paragraph block styles
+--------------------------------------------- */
+.wp-block-due-processed-custom-paragraph {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	position: relative;
+	left: calc(-50vw + 50%);
+	background-color: #e3eff4;
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	width: 636px;
 }
