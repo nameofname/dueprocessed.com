@@ -219,8 +219,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-add_action('init', 'custom_paragraph_block_init');
-
 /**
  * Implement the masthead feature
  */
