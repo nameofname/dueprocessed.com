@@ -1,0 +1,28 @@
+.site-main-about {
+	margin: 0;
+	width: 100vw;
+
+	.about-container {
+		display: flex;
+		justify-content: center;
+		width: 100vw;
+		margin-top: $spacing__small;
+	}
+
+	h1,
+	h2 {
+		@include font-header($size: large);
+		text-align: center;
+	}
+
+	p {
+		@include breakpoint-below(tablet-portrait) {
+			margin-left: $spacing__small;
+			margin-right: $spacing__small;
+		}
+	}
+
+	.entry-content {
+		max-width: 636px;
+	}
+}

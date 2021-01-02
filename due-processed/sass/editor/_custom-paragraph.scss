@@ -1,0 +1,12 @@
+.wp-block-due-processed-custom-paragraph {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	position: relative;
+	left: calc(-50vw + 50%);
+	background-color: $color__custom-paragraph;
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	width: 636px;
+}

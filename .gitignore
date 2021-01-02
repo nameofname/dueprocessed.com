@@ -1,9 +1,10 @@
 node_modules
-vendor
+due-processed/vendor
 package-lock.json
 composer.lock
 style.css.map
 .DS_Store
+.vscode
 wp-content/themes/*
 !wp-content/themes/due-processed
 due-processed/vendor/*
