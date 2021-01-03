@@ -1,0 +1,141 @@
+.main-navigation {
+	display: block;
+	width: 100%;
+
+	.main-navigation ul {
+		display: flex;
+	}
+
+	.menu,
+	.sub-menu {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	.menu {
+		display: flex;
+	}
+
+	.menu-item {
+		@include font-label();
+		position: relative;
+		white-space: nowrap;
+
+		// TODO: Ask Eunie; add hover styles?
+		// &:hover > a,
+		// &.focus > a {
+		// }
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.menu {
+		> .menu-item {
+			a {
+				line-height: 60px;
+				margin-right: $spacing__x-large;
+			}
+
+			&:hover > .sub-menu,
+			&.focus > .sub-menu {
+				display: block;
+			}
+
+			> .sub-menu {
+				@include breakpoint-above(tablet-landscape) {
+					background-color: $color__background-body;
+					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+					border: 1px solid $color__border;
+					padding: $spacing__small;
+					display: none;
+					position: absolute;
+					min-height: 200px;
+					width: 250px;
+					top: 60px;
+					z-index: 99999;
+				}
+
+				.sub-menu {
+					margin-left: $spacing__x-small;
+				}
+
+				.menu-item {
+					line-height: normal;
+				}
+			}
+		}
+	}
+
+	// TODO: Ask Eunie... special styles for these cases?
+	// .current_page_item > a,
+	// .current-menu-item > a,
+	// .current_page_ancestor > a,
+	// .current-menu-ancestor > a {
+	// }
+}
+
+.main-navigation-hamburger {
+	@include breakpoint-above(tablet-landscape) {
+		display: none;
+	}
+	@include breakpoint-below(tablet-portrait) {
+		display: block;
+	}
+}
+
+/* Small menu. */
+.main-navigation {
+	@include breakpoint-below(tablet-portrait) {
+		display: none;
+		position: absolute;
+		width: 100%;
+		background: $color__background-body;
+		height: 100%;
+		z-index: 1000;
+        top: 55px;
+        overflow: scroll;
+        padding-bottom: 80px;
+
+		.admin-bar & {
+			top: 101px;
+		}
+
+		.menu-item {
+			padding: $spacing__x-small $spacing__small;
+			border-top: 1px solid $color__border;
+			margin: 0;
+		}
+
+		.sub-menu {
+			.menu-item {
+				border: none;
+			}
+		}
+
+		&.toggled {
+			display: block;
+
+			.menu {
+				display: block;
+			}
+		}
+	}
+}
+
+.main-navigation-hamburger,
+.main-navigation-hamburger.toggled {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	background: $color__background-body;
+	color: $color__text-main;
+
+	&:hover {
+		opacity: 0.85;
+		color: $color__text-main;
+	}
+}
