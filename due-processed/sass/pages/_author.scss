@@ -103,6 +103,8 @@
 	vertical-align: middle;
 }
 
-.author-profile-email {
+.author-profile-email,
+.author-profile-twitter {
 	display: inline-block;
+	margin-left: $spacing__x-small;
 }

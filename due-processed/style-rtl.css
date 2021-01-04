@@ -550,6 +550,9 @@ html {
 body {
 	background: #fff;
 }
+body.overflow-hidden {
+	overflow: hidden;
+}
 
 hr {
 	background-color: #ccc;
@@ -601,6 +604,14 @@ figure {
 	margin: 1em 0;
 }
 
+.icon {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	fill: currentColor;
+}
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -624,7 +635,7 @@ a:active {
 	color: #005b83;
 }
 a:focus {
-	outline: thin dotted;
+	outline: none;
 }
 a:hover,
 a:active {
@@ -648,6 +659,7 @@ input[type="submit"] {
 	padding-right: 20px;
 	padding-left: 20px;
 	cursor: pointer;
+	outline: none;
 }
 .button:hover,
 button:hover,
@@ -742,10 +754,8 @@ textarea {
 ## Header
 --------------------------------------------------------------*/
 .site-header {
-	border-bottom: 1px solid #ccc;
-	height: 130px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 	padding-top: 20px;
-	padding-bottom: 20px;
 }
 .site-header a {
 	color: #151515;
@@ -756,14 +766,27 @@ textarea {
 .site-header a:active {
 	color: #151515;
 }
+@media (max-width: 768px) {
+	.site-header {
+		padding-top: 15px;
+		padding-bottom: 10px;
+	}
+}
+@media (min-width: 769px) {
+	.site-header .search-form-wrapper {
+		width: 300px;
+	}
+}
+@media (max-width: 768px) {
+	.site-header .search-form-wrapper {
+		margin-top: 10px;
+	}
+}
 
 .site-header-top {
-	flex-direction: column;
-	height: 50px;
-	margin: 0 20px;
 	display: flex;
 }
-@media (min-width: 569px) {
+@media (min-width: 769px) {
 	.site-header-top {
 		width: calc(100% - (2 * 60px));
 		max-width: 1440px;
@@ -773,22 +796,48 @@ textarea {
 		align-items: center;
 	}
 }
-@media (min-width: 569px) and (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-header-top {
 		width: calc(100% - (2 * 20px));
 	}
 }
+@media (max-width: 768px) {
+	.site-header-top {
+		margin: 0 20px;
+		flex-wrap: wrap;
+	}
+}
 
-.site-header-bottom {
-	width: calc(100% - (2 * 60px));
-	max-width: 1440px;
-	margin: 0 auto;
+.site-branding {
 	display: flex;
-	height: 80px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	align-items: flex-end;
+}
+@media (min-width: 769px) {
+	.site-branding {
+		width: 300px;
+	}
 }
 @media (max-width: 768px) {
+	.site-branding {
+		width: 195px;
+		margin-right: 20px;
+	}
+}
+
+.site-branding-link {
+	display: inline-block;
+	width: 100%;
+}
+
+@media (min-width: 769px) {
+	.site-header-bottom {
+		width: calc(100% - (2 * 60px));
+		max-width: 1440px;
+		margin: 0 auto;
+		display: flex;
+	}
+}
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-header-bottom {
 		width: calc(100% - (2 * 20px));
 	}
@@ -810,7 +859,7 @@ textarea {
 	/* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 }
-@media (min-width: 569px) {
+@media (min-width: 769px) {
 	.site-main {
 		width: calc(100% - (2 * 60px));
 		max-width: 1440px;
@@ -820,7 +869,7 @@ textarea {
 		margin-bottom: 50px;
 	}
 }
-@media (min-width: 569px) and (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-main {
 		width: calc(100% - (2 * 20px));
 	}
@@ -968,8 +1017,10 @@ textarea {
 	vertical-align: middle;
 }
 
-.author-profile-email {
+.author-profile-email,
+.author-profile-twitter {
 	display: inline-block;
+	margin-right: 10px;
 }
 
 .site-main-about {
@@ -1005,67 +1056,163 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
+
+/* Main Navigation (Header)
+--------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: 100%;
 }
-.main-navigation ul {
-	display: none;
+.main-navigation .main-navigation ul {
+	display: flex;
+}
+.main-navigation .menu,
+.main-navigation .sub-menu {
 	list-style: none;
 	margin: 0;
 	padding-right: 0;
 }
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: right;
-	position: absolute;
-	top: 100%;
-	right: -999em;
-	z-index: 99999;
+.main-navigation .menu {
+	display: flex;
 }
-.main-navigation ul ul ul {
-	right: -999em;
-	top: 0;
-}
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	right: auto;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	right: auto;
-}
-.main-navigation li {
+.main-navigation .menu-item {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	position: relative;
-	margin-left: 50px;
 	white-space: nowrap;
 }
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation .menu > .menu-item a {
+	line-height: 60px;
+	margin-left: 50px;
+}
+.main-navigation .menu > .menu-item > a {
+	border-bottom: 3px solid transparent;
+}
+.main-navigation .menu > .menu-item > a:hover,
+.main-navigation .menu > .menu-item > a.focus {
+	border-bottom: 3px solid #005b83;
+}
+.main-navigation .menu > .menu-item:hover > .sub-menu,
+.main-navigation .menu > .menu-item.focus > .sub-menu {
 	display: block;
 }
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+@media (min-width: 769px) {
+	.main-navigation .menu > .menu-item > .sub-menu {
+		background-color: #fff;
+		border-top: 1px solid #ccc;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+		padding: 20px 20px 10px 20px;
 		display: none;
+		position: absolute;
+		min-height: 200px;
+		width: 250px;
+		top: 63px;
+		right: -20px;
+		z-index: 99999;
 	}
-	.main-navigation ul {
-		display: flex;
+}
+.main-navigation .menu > .menu-item > .sub-menu .sub-menu {
+	margin-right: 10px;
+}
+.main-navigation .menu > .menu-item > .sub-menu .menu-item a {
+	line-height: normal;
+	margin-bottom: 10px;
+}
+
+/* Small menu. */
+.main-navigation-icon,
+.main-navigation-icon.toggled {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	background: #fff;
+	color: #151515;
+}
+.main-navigation-icon:hover,
+.main-navigation-icon.toggled:hover {
+	opacity: 0.85;
+	color: #151515;
+}
+.main-navigation-icon > span,
+.main-navigation-icon.toggled > span {
+	display: inline-block;
+}
+.main-navigation-icon > span.main-navigation-close,
+.main-navigation-icon.toggled > span.main-navigation-close {
+	padding: 6px;
+}
+
+@media (min-width: 769px) {
+	.main-navigation-icon {
+		display: none;
 	}
 }
 
+@media (max-width: 768px) {
+	.main-navigation-icon {
+		display: block;
+	}
+	.main-navigation-icon .main-navigation-close {
+		display: none;
+	}
+	.main-navigation-icon .main-navigation-hamburger {
+		display: block;
+	}
+	.main-navigation-icon.toggled .main-navigation-close {
+		display: block;
+	}
+	.main-navigation-icon.toggled .main-navigation-hamburger {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.main-navigation {
+		display: none;
+		position: absolute;
+		width: 100%;
+		background: #fff;
+		height: 100%;
+		z-index: 1000;
+		top: 55px;
+		overflow: scroll;
+		padding-bottom: 80px;
+	}
+	.admin-bar .main-navigation {
+		top: 101px;
+	}
+	.main-navigation .menu-item {
+		padding: 0 20px;
+		margin: 0;
+	}
+	.main-navigation .menu-item > .sub-menu {
+		border-top: 1px solid #ccc;
+		margin-top: 10px;
+		padding-top: 30px;
+	}
+	.main-navigation .menu > .menu-item.menu-item-has-children > a {
+		display: none;
+	}
+	.main-navigation .menu > .menu-item .menu-item {
+		padding: 0;
+	}
+	.main-navigation .menu > .menu-item > .sub-menu .sub-menu {
+		display: none;
+	}
+	.main-navigation.toggled {
+		display: block;
+	}
+	.main-navigation.toggled .menu {
+		display: block;
+	}
+}
+
+/* Other Navigation (Comments, Posts, Etc.)
+--------------------------------------------- */
 .site-main .comment-navigation,
 .site-main
 .posts-navigation,
@@ -1091,6 +1238,40 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+/* Search Form
+--------------------------------------------- */
+.search-form-wrapper {
+	width: 100%;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.search-form {
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-form-label {
+	flex: 2 0;
+}
+
+input.search-field {
+	background: transparent;
+	border: none;
+	width: 100%;
+}
+
+.search-submit {
+	width: 40px;
+	padding: 10px;
+}
+@media (max-width: 768px) {
+	.search-submit {
+		background: #fff;
+		color: #151515;
+	}
 }
 
 /* content components
