@@ -12,6 +12,7 @@ input[type="submit"] {
 	padding-left: 20px;
 	padding-right: 20px;
 	cursor: pointer;
+	outline: none;
 
 	&:hover {
 		opacity: 0.85;
