@@ -67,8 +67,8 @@ if ( ! function_exists( 'due_processed_setup' ) ) :
 
 		register_nav_menus(
 			array(
-				'footer' => esc_html__( 'Footer', 'due-processed' ),
 				'header' => esc_html__( 'Primary', 'due-processed' ),
+				'footer' => esc_html__( 'Footer', 'due-processed' ),
 			)
 		);
 

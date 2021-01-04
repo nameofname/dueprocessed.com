@@ -39,7 +39,7 @@ $copyright = sprintf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), 
 					<!--TODO: make this work -->
 					<form role="email" method="post" class="email-form" action="http://localhost:8000/">
 						<input type="email" class="email-field" placeholder="Enter Email Address" value="" name="email">
-						<input type="submit" class="search-submit" value="Submit">
+						<input type="submit" class="email-submit" value="Submit">
 					</form>
 				</div>
 				<div class='site-info-row copyright-mobile'>
