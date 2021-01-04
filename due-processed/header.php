@@ -27,8 +27,13 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-header-top">
-			<button id="site-navigation-hamburger" class="main-navigation-hamburger" aria-controls="primary-menu" aria-expanded="false">
-				<?php get_template_part( 'template-parts/icon', 'hamburger' ); ?>
+			<button id="site-navigation-icon" class="main-navigation-icon" aria-controls="primary-menu" aria-expanded="false">
+				<span class="main-navigation-hamburger">
+					<?php get_template_part( 'template-parts/icon', 'hamburger' ); ?>
+				</span>
+				<span class="main-navigation-close">
+					<?php get_template_part( 'template-parts/icon', 'x' ); ?>
+				</span>
 			</button>
 			<div class="site-branding">
 				<a class="site-branding-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

@@ -12,7 +12,7 @@
 		return;
 	}
 
-	const button = document.getElementById( 'site-navigation-hamburger' );
+	const button = document.getElementById( 'site-navigation-icon' );
 
 	// Return early if the button don't exist.
 	if ( 'undefined' === typeof button ) {
@@ -35,6 +35,7 @@
 	// TODO: Ask Eunie for "X" icon to toggle between hamburger icon
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
+		button.classList.toggle('toggled');
 		document.body.classList.toggle( 'overflow-hidden' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
