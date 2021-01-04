@@ -27,9 +27,18 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-header-top">
+			<button id="site-navigation-icon" class="main-navigation-icon" aria-controls="primary-menu" aria-expanded="false">
+				<span class="main-navigation-hamburger">
+					<?php get_template_part( 'template-parts/icon', 'hamburger' ); ?>
+				</span>
+				<span class="main-navigation-close">
+					<?php get_template_part( 'template-parts/icon', 'x' ); ?>
+				</span>
+			</button>
 			<div class="site-branding">
-				<?php the_custom_logo(); ?>
-				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a class="site-branding-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php get_template_part( 'template-parts/icon', 'logo' ); ?>
+				</a>
 			</div><!-- .site-branding -->
 
 			<?php get_search_form(); ?>
@@ -37,15 +46,14 @@
 
 		<div class="site-header-bottom">
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'due-processed' ); ?></button>
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'header',
 						'menu_id'        => 'primary-menu',
 					)
 				);
 				?>
 			</nav><!-- #site-navigation -->
-		<div class="site-header-bottom">
+		</div>
 	</header><!-- #masthead -->

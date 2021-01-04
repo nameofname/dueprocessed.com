@@ -19,7 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -89,15 +88,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -109,7 +104,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -135,7 +129,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -157,7 +150,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -223,7 +215,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -233,7 +224,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -379,7 +369,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -396,7 +385,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -413,7 +401,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -429,7 +416,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -551,6 +537,10 @@ body {
 	background: #fff;
 }
 
+body.overflow-hidden {
+	overflow: hidden;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -601,6 +591,14 @@ figure {
 	margin: 1em 0;
 }
 
+.icon {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	fill: currentColor;
+}
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
@@ -612,22 +610,24 @@ a {
 	color: #005b83;
 	text-decoration: none;
 }
+
 a:visited {
 	color: #005b83;
 }
+
 a:hover {
 	text-decoration: underline;
 }
-a:hover,
-a:focus,
-a:active {
+
+a:hover, a:focus, a:active {
 	color: #005b83;
 }
+
 a:focus {
-	outline: thin dotted;
+	outline: none;
 }
-a:hover,
-a:active {
+
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -648,7 +648,9 @@ input[type="submit"] {
 	padding-left: 20px;
 	padding-right: 20px;
 	cursor: pointer;
+	outline: none;
 }
+
 .button:hover,
 button:hover,
 input[type="button"]:hover,
@@ -657,8 +659,8 @@ input[type="submit"]:hover {
 	opacity: 0.85;
 	color: #fff;
 }
-.button:active,
-.button:focus,
+
+.button:active, .button:focus,
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -669,6 +671,7 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
 	opacity: 0.85;
 }
+
 .button:visited,
 button:visited,
 input[type="button"]:visited,
@@ -705,6 +708,7 @@ textarea {
 	padding-right: 10px;
 	height: 40px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -737,33 +741,47 @@ textarea {
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
 .site-header {
-	border-bottom: 1px solid #ccc;
-	height: 130px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 	padding-top: 20px;
-	padding-bottom: 20px;
 }
+
 .site-header a {
 	color: #151515;
 	text-decoration: none;
 }
-.site-header a:hover,
-.site-header a:focus,
-.site-header a:active {
+
+.site-header a:hover, .site-header a:focus, .site-header a:active {
 	color: #151515;
 }
 
+@media (max-width: 768px) {
+	.site-header {
+		padding-top: 15px;
+		padding-bottom: 10px;
+	}
+}
+
+@media (min-width: 769px) {
+	.site-header .search-form-wrapper {
+		width: 300px;
+	}
+}
+
+@media (max-width: 768px) {
+	.site-header .search-form-wrapper {
+		margin-top: 10px;
+	}
+}
+
 .site-header-top {
-	flex-direction: column;
-	height: 50px;
-	margin: 0 20px;
 	display: flex;
 }
-@media (min-width: 569px) {
+
+@media (min-width: 769px) {
 	.site-header-top {
 		width: calc(100% - (2 * 60px));
 		max-width: 1440px;
@@ -773,22 +791,53 @@ textarea {
 		align-items: center;
 	}
 }
-@media (min-width: 569px) and (max-width: 768px) {
+
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-header-top {
 		width: calc(100% - (2 * 20px));
 	}
 }
 
-.site-header-bottom {
-	width: calc(100% - (2 * 60px));
-	max-width: 1440px;
-	margin: 0 auto;
-	display: flex;
-	height: 80px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
 @media (max-width: 768px) {
+	.site-header-top {
+		margin: 0 20px;
+		flex-wrap: wrap;
+	}
+}
+
+.site-branding {
+	display: flex;
+	align-items: flex-end;
+}
+
+@media (min-width: 769px) {
+	.site-branding {
+		width: 300px;
+	}
+}
+
+@media (max-width: 768px) {
+	.site-branding {
+		width: 195px;
+		margin-left: 20px;
+	}
+}
+
+.site-branding-link {
+	display: inline-block;
+	width: 100%;
+}
+
+@media (min-width: 769px) {
+	.site-header-bottom {
+		width: calc(100% - (2 * 60px));
+		max-width: 1440px;
+		margin: 0 auto;
+		display: flex;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-header-bottom {
 		width: calc(100% - (2 * 20px));
 	}
@@ -806,11 +855,11 @@ textarea {
 .site-main {
 	margin: 20px;
 	overflow: hidden;
-
 	/* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 }
-@media (min-width: 569px) {
+
+@media (min-width: 769px) {
 	.site-main {
 		width: calc(100% - (2 * 60px));
 		max-width: 1440px;
@@ -820,7 +869,8 @@ textarea {
 		margin-bottom: 50px;
 	}
 }
-@media (min-width: 569px) and (max-width: 768px) {
+
+@media (min-width: 769px) and (max-width: 768px) {
 	.site-main {
 		width: calc(100% - (2 * 20px));
 	}
@@ -841,6 +891,7 @@ textarea {
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
+
 @media (max-width: 768px) {
 	.site-info {
 		width: calc(100% - (2 * 20px));
@@ -976,12 +1027,14 @@ textarea {
 	margin: 0;
 	width: 100vw;
 }
+
 .site-main-about .about-container {
 	display: flex;
 	justify-content: center;
 	width: 100vw;
 	margin-top: 20px;
 }
+
 .site-main-about h1,
 .site-main-about h2 {
 	font-size: 2.8rem;
@@ -989,12 +1042,14 @@ textarea {
 	line-height: 30px;
 	text-align: center;
 }
+
 @media (max-width: 768px) {
 	.site-main-about p {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
 }
+
 .site-main-about .entry-content {
 	max-width: 636px;
 }
@@ -1002,74 +1057,180 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
+--------------------------------------------- */
+/* Main Navigation (Header)
 --------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: 100%;
 }
-.main-navigation ul {
-	display: none;
+
+.main-navigation .main-navigation ul {
+	display: flex;
+}
+
+.main-navigation .menu,
+.main-navigation .sub-menu {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+
+.main-navigation .menu {
+	display: flex;
 }
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-.main-navigation li {
+
+.main-navigation .menu-item {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	position: relative;
-	margin-right: 50px;
 	white-space: nowrap;
 }
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation .menu > .menu-item a {
+	line-height: 60px;
+	margin-right: 50px;
+}
+
+.main-navigation .menu > .menu-item > a {
+	border-bottom: 3px solid transparent;
+}
+
+.main-navigation .menu > .menu-item > a:hover, .main-navigation .menu > .menu-item > a.focus {
+	border-bottom: 3px solid #005b83;
+}
+
+.main-navigation .menu > .menu-item:hover > .sub-menu,
+.main-navigation .menu > .menu-item.focus > .sub-menu {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+@media (min-width: 769px) {
+	.main-navigation .menu > .menu-item > .sub-menu {
+		background-color: #fff;
+		border-top: 1px solid #ccc;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+		padding: 20px 20px 10px 20px;
 		display: none;
-	}
-	.main-navigation ul {
-		display: flex;
+		position: absolute;
+		min-height: 200px;
+		width: 250px;
+		top: 63px;
+		left: -20px;
+		z-index: 99999;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.main-navigation .menu > .menu-item > .sub-menu .sub-menu {
+	margin-left: 10px;
+}
+
+.main-navigation .menu > .menu-item > .sub-menu .menu-item a {
+	line-height: normal;
+	margin-bottom: 10px;
+}
+
+/* Small menu. */
+.main-navigation-icon,
+.main-navigation-icon.toggled {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	background: #fff;
+	color: #151515;
+}
+
+.main-navigation-icon:hover,
+.main-navigation-icon.toggled:hover {
+	opacity: 0.85;
+	color: #151515;
+}
+
+.main-navigation-icon > span,
+.main-navigation-icon.toggled > span {
+	display: inline-block;
+}
+
+.main-navigation-icon > span.main-navigation-close,
+.main-navigation-icon.toggled > span.main-navigation-close {
+	padding: 6px;
+}
+
+@media (min-width: 769px) {
+	.main-navigation-icon {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.main-navigation-icon {
+		display: block;
+	}
+	.main-navigation-icon .main-navigation-close {
+		display: none;
+	}
+	.main-navigation-icon .main-navigation-hamburger {
+		display: block;
+	}
+	.main-navigation-icon.toggled .main-navigation-close {
+		display: block;
+	}
+	.main-navigation-icon.toggled .main-navigation-hamburger {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.main-navigation {
+		display: none;
+		position: absolute;
+		width: 100%;
+		background: #fff;
+		height: 100%;
+		z-index: 1000;
+		top: 55px;
+		overflow: scroll;
+		padding-bottom: 80px;
+	}
+	.admin-bar .main-navigation {
+		top: 101px;
+	}
+	.main-navigation .menu-item {
+		padding: 0 20px;
+		margin: 0;
+	}
+	.main-navigation .menu-item > .sub-menu {
+		border-top: 1px solid #ccc;
+		margin-top: 10px;
+		padding-top: 30px;
+	}
+	.main-navigation .menu > .menu-item.menu-item-has-children > a {
+		display: none;
+	}
+	.main-navigation .menu > .menu-item .menu-item {
+		padding: 0;
+	}
+	.main-navigation .menu > .menu-item > .sub-menu .sub-menu {
+		display: none;
+	}
+	.main-navigation.toggled {
+		display: block;
+	}
+	.main-navigation.toggled .menu {
+		display: block;
+	}
+}
+
+/* Other Navigation (Comments, Posts, Etc.)
+--------------------------------------------- */
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -1091,6 +1252,41 @@ textarea {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+/* Search Form
+--------------------------------------------- */
+.search-form-wrapper {
+	width: 100%;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.search-form {
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-form-label {
+	flex: 2 0;
+}
+
+input.search-field {
+	background: transparent;
+	border: none;
+	width: 100%;
+}
+
+.search-submit {
+	width: 40px;
+	padding: 10px;
+}
+
+@media (max-width: 768px) {
+	.search-submit {
+		background: #fff;
+		color: #151515;
+	}
 }
 
 /* content components
@@ -1179,6 +1375,7 @@ textarea {
 	margin: 0 auto;
 	max-width: 872px;
 }
+
 @media (max-width: 768px) {
 	.single-post .post,
 	.single-post .post-navigation {
@@ -1223,6 +1420,7 @@ textarea {
 	max-width: 1094px;
 	margin: 0 auto;
 }
+
 @media (max-width: 768px) {
 	.search-results-wrapper {
 		grid-template-columns: 1fr;
@@ -1230,6 +1428,7 @@ textarea {
 		max-width: 375px;
 	}
 }
+
 @media (max-width: 768px) {
 	.search-results-wrapper > .post {
 		border-bottom: 1px solid #ccc;
@@ -1242,6 +1441,7 @@ textarea {
 		border-bottom: 0;
 	}
 }
+
 .search-results-wrapper > .post > .entry-summary > p {
 	margin: 5px 0;
 }
@@ -1254,7 +1454,6 @@ textarea {
 
 /* Footnotes
 --------------------------------------------- */
-
 /* Shared
 --------------------------------------------- */
 .footnote-wrapper {
@@ -1277,9 +1476,11 @@ textarea {
 	grid-template-columns: 15px 1fr;
 	cursor: pointer;
 }
+
 .footnote-note a {
 	overflow-wrap: break-word;
 }
+
 .footnote-hidden .footnote-note {
 	visibility: hidden;
 }
@@ -1345,6 +1546,7 @@ textarea {
 .widget {
 	margin: 0 0 1.5em;
 }
+
 .widget select {
 	max-width: 100%;
 }
@@ -1371,11 +1573,13 @@ textarea {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
@@ -1448,6 +1652,7 @@ textarea {
 	justify-content: center;
 	margin-bottom: 20px;
 }
+
 @media (max-width: 768px) {
 	.masthead {
 		flex-direction: column;
@@ -1468,6 +1673,7 @@ textarea {
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
+
 @media (max-width: 768px) {
 	.masthead-image {
 		width: 70px;
@@ -1491,6 +1697,7 @@ textarea {
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	margin: 0 0 10px;
 }
+
 @media (max-width: 768px) {
 	.masthead-title {
 		margin: 0;
@@ -1507,10 +1714,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -1525,10 +1730,8 @@ textarea {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -1542,6 +1745,7 @@ textarea {
 	width: 1px;
 	word-wrap: normal !important;
 }
+
 .screen-reader-text:focus {
 	background-color: #f5f5f5;
 	border-radius: 3px;
@@ -1570,20 +1774,16 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -1611,3 +1811,5 @@ textarea {
 .wp-block-due-processed-custom-paragraph p {
 	width: 636px;
 }
+
+/*# sourceMappingURL=style.css.map */

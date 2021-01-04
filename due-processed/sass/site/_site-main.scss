@@ -1,5 +1,5 @@
 .site-main {
-	@include breakpoint-above(tablet-portrait) {
+	@include breakpoint-above(tablet-landscape) {
 		@include primary-page-width();
 		min-height: 560px;
 		margin-top: $spacing__x-large;

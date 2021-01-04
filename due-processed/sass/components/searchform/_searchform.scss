@@ -1,0 +1,30 @@
+.search-form-wrapper {
+	width: 100%;
+	background: $color__background-body;
+	border: 1px solid $color__border-input;
+}
+
+.search-form {
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-form-label {
+	flex: 2 0;
+}
+
+input.search-field {
+	background: transparent;
+	border: none;
+	width: 100%;
+}
+
+.search-submit {
+	width: 40px;
+	padding: $spacing__x-small;
+
+	@include breakpoint-below(tablet-portrait) {
+		background: $color__background-body;
+		color: $color__text-input;
+	}
+}
