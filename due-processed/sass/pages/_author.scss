@@ -1,0 +1,109 @@
+.site-main-author {
+	overflow: visible;
+}
+
+.author-profile {
+	border-bottom: 1px solid $color__border;
+	padding-bottom: $spacing__large;
+	margin-bottom: $spacing__large;
+}
+
+.author-profile-body {
+	display: flex;
+	flex-direction: row;
+	@include breakpoint-below(tablet-portrait) {
+		flex-direction: column;
+	}
+}
+
+.author-profile-title-desktop {
+	@include font-label($size: medium);
+	margin-bottom: $spacing__x-small;
+	@include breakpoint-below(tablet-portrait) {
+		display: none;
+	}
+}
+
+.author-profile-name-title-container {
+	display: inline-block;
+}
+
+.author-profile-title-mobile {
+	margin-bottom: $spacing__x-small;
+	@include font-label($size: medium);
+}
+
+.author-profile-name-desktop {
+	margin-bottom: $spacing__medium;
+	@include breakpoint-below(tablet-portrait) {
+		display: none;
+	}
+}
+
+.author-profile-photo-name-container-mobile {
+	display: none;
+	margin-bottom: $spacing__medium;
+	@include breakpoint-below(tablet-portrait) {
+		display: inline-block;
+	}
+}
+
+.author-profile-name-mobile {
+	display: inline-block;
+}
+
+.author-profile-photo-desktop {
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: $spacing__x-large;
+	min-width: 141px;
+	min-height: 141px;
+	width: 141px;
+	height: 141px;
+	@include breakpoint-below(tablet-portrait) {
+		display: none;
+	}
+}
+
+.author-profile-photo-mobile {
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: $spacing__small;
+	vertical-align: top;
+	min-width: 70px;
+	min-height: 70px;
+	width: 70px;
+	height: 70px;
+}
+
+.author-profile-bio {
+	display: inline-block;
+	max-width: 676px;
+	vertical-align: top;
+	margin-right: $spacing__large;
+	@include breakpoint-below(tablet-portrait) {
+		margin: 0 0 $spacing__small;
+	}
+}
+
+
+.author-profile-body-right {
+	white-space: nowrap;
+}
+
+.author-profile-contact-info {
+	margin-bottom: $spacing__x-small;
+}
+
+.author-profile-icon {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	vertical-align: middle;
+}
+
+.author-profile-email,
+.author-profile-twitter {
+	display: inline-block;
+	margin-left: $spacing__x-small;
+}
