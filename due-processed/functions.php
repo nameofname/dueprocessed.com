@@ -151,6 +151,17 @@ function due_processed_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'due-processed' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Footer widgets go here.', 'due-processed' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'due_processed_widgets_init' );
 

@@ -33,14 +33,7 @@ $copyright = sprintf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), 
 			</div>
 			<div class="site-info-right">
 				<div class="site-info-row">
-					<h3 class="sign-up-title">Sign Up For Email Updates</h3>
-				</div>
-				<div class="site-info-row">
-					<!--TODO: make this work -->
-					<form role="email" method="post" class="email-form" action="http://localhost:8000/">
-						<input type="email" class="email-field" placeholder="Enter Email Address" value="" name="email">
-						<input type="submit" class="email-submit" value="Submit">
-					</form>
+					<?php get_sidebar( 'footer' ); ?>
 				</div>
 				<div class='site-info-row copyright-mobile'>
 					<?php
