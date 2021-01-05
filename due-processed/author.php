@@ -55,14 +55,18 @@ $photo_element = get_avatar( $curauth->user_email , '90', '', '', array('class' 
 			<div class='author-profile-body-right'>
 				<?php if ( get_the_author_meta( 'twitter' )) { ?>
 					<div class='author-profile-contact-info'>
-						<?php get_template_part( 'template-parts/icon', 'twitter' ); ?>
+						<span class="author-profile-icon">
+							<?php get_template_part( 'template-parts/icon', 'twitter' ); ?>
+						</span>
 						<div class='author-profile-twitter'>
 							<?php the_author_meta( 'twitter' ) ?>
 						</div>
 					</div>
 				<?php } ?>
 				<div class='author-profile-contact-info'>
-					<?php get_template_part( 'template-parts/icon', 'email' ); ?>
+					<span class="author-profile-icon">
+						<?php get_template_part( 'template-parts/icon', 'email' ); ?>
+					</span>
 					<div class='author-profile-email'>
 						<?php echo $curauth->user_email ?>
 					</div>
