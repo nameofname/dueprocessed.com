@@ -26,6 +26,7 @@ input[type="submit"] {
 
 	&:visited {
 		opacity: 1;
+		color: $color__text-button;
 	}
 }
 .button {

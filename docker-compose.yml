@@ -22,6 +22,8 @@ services:
      restart: always
      volumes:
        - ./wp-content/:/var/www/html/wp-content 
+       # https://stackoverflow.com/a/54013100/339698
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini 
        - ./due-processed/:/var/www/html/wp-content/themes/due-processed
      environment:
        WORDPRESS_DB_HOST: db:3306
