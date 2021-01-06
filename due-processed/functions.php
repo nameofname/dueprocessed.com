@@ -154,7 +154,7 @@ function due_processed_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer', 'due-processed' ),
-			'id'            => 'sidebar-2',
+			'id'            => 'sidebar-footer',
 			'description'   => esc_html__( 'Footer widgets go here.', 'due-processed' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
