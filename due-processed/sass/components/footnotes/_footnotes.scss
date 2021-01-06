@@ -1,12 +1,47 @@
 /* Shared
 --------------------------------------------- */
-.footnote-wrapper {
+
+.footnote-wrapper,
+.footnotes-footer {
+	display: none;
+}
+
+.footnotes-footer {
+	@include breakpoint-below(tablet-portrait) {
+		display: block;
+	}
+
+	&.footnote-hidden {
+		display: none;
+	}
+
 	@include font-body($size: small);
+
+	border-top: 1px solid $color__border;
+	margin-top: $spacing__small;
+	padding-top: $spacing__small;
+
+	.footnotes-footer-title {
+		margin-bottom: $spacing__small;
+		@include font-label();
+	}
+
+	.footnote-cta {
+		display: none;
+	}
+}
+
+.footnote-wrapper {
+	display: none;
+	@include font-body($size: small);
+
+	.single-post & {
+		display: inline;
+	}
 }
 
 .footnote-anchor {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding: 4px;
 }
 
 .footnote a {
@@ -31,7 +66,6 @@
 	color: $color__border;
 }
 
-
 /* Stacked (Desktop + Tablet) Layout
 --------------------------------------------- */
 .footnote-stacked {
@@ -43,14 +77,34 @@
 		margin-right: 1px; // tolerance needed for box-shadow display
 	}
 
+	.footnote-anchor {
+		&:hover {
+			background: $color__background-button;
+			color: $color__text-button;
+		}
+	}
+
 	.footnote-note-content {
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
+		-webkit-line-clamp: 2;
 		overflow: hidden;
 	}
 
+	.footnote-cta-more {
+		display: inline;
+	}
+
+	.footnote-cta-less {
+		display: none;
+	}
+
 	&.footnote-open {
+		.footnote-anchor {
+			background: $color__background-button;
+			color: $color__text-button;
+		}
+
 		.footnote-note {
 			background: $color__background-body;
 			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);
@@ -61,6 +115,19 @@
 			display: block;
 			overflow: auto;
 		}
+
+		.footnote-cta-more {
+			display: none;
+		}
+
+		.footnote-cta-less {
+			display: inline;
+		}
+	}
+	.footnote-cta {
+		display: block;
+		grid-row: 2;
+		grid-column: 2;
 	}
 }
 
@@ -69,7 +136,7 @@
 .footnote-inline {
 	.footnote-note {
 		display: none;
-		background: $color__background-secondary;
+		background: $color__background-footnote;
 		padding: $spacing__x-small $spacing__x-large $spacing__x-small
 			$spacing__small;
 		margin: $spacing__x-small 0;
@@ -79,5 +146,8 @@
 		.footnote-note {
 			display: grid;
 		}
+	}
+	.footnote-cta {
+		display: none;
 	}
 }

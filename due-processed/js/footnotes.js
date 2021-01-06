@@ -11,6 +11,8 @@ const CLASSNAMES = {
 	WRAPPER: 'footnote-wrapper',
 	ANCHOR: 'footnote-anchor',
 	NOTE: 'footnote-note',
+	CTA: 'footnote-cta',
+	FOOTER: 'footnotes-footer',
 
 	/* Layout Classes */
 	STACKED: 'footnote-stacked',
@@ -52,13 +54,28 @@ function toggleOpenState( event, closeOpened = true ) {
 	}
 }
 
+function cloneContent() {
+	const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
+
+	if (!footerEl) {
+		return null;
+	}
+
+	const contentEls = Array.from(document.getElementsByClassName( `${ CLASSNAMES.NOTE }` ) || []);
+
+	contentEls.forEach((contentEl) => {
+		const clone = contentEl.cloneNode(true);
+		footerEl.append(clone);
+	});
+}
+
 /**
  * Stacked Layout Setup
  *
  * @return {function(): void} Cleanup function removes sidebar classes and event listeners
  */
 function setUpStackedLayout() {
-	function onAnchorOrFootnoteClick( event ) {
+	function onAnchorOrCtaClick( event ) {
 		toggleOpenState( event );
 	}
 
@@ -102,8 +119,14 @@ function setUpStackedLayout() {
 	} );
 
 	const anchorEls = Array.from( document.querySelectorAll( `.${ CLASSNAMES.ANCHOR }` ) ) || [];
+	const ctaEls = Array.from( document.querySelectorAll( `.${ CLASSNAMES.CTA }` ) ) || [];
+
 	anchorEls.forEach( ( anchorEl ) => {
-		anchorEl.addEventListener( 'click', onAnchorOrFootnoteClick );
+		anchorEl.addEventListener( 'click', onAnchorOrCtaClick );
+	} );
+
+	ctaEls.forEach( ( ctaEls ) => {
+		ctaEls.addEventListener( 'click', onAnchorOrCtaClick );
 	} );
 
 	footnoteWrapperEls.forEach( ( footnoteWrapperEl ) => {
@@ -119,7 +142,10 @@ function setUpStackedLayout() {
 			footnoteEl.removeAttribute( 'style' );
 		} );
 		anchorEls.forEach( ( anchorEl ) => {
-			anchorEl.removeEventListener( 'click', onAnchorOrFootnoteClick );
+			anchorEl.removeEventListener( 'click', onAnchorOrCtaClick );
+		} );
+		ctaEls.forEach( ( ctaEl ) => {
+			ctaEl.removeEventListener( 'click', onAnchorOrCtaClick );
 		} );
 	};
 }
@@ -157,8 +183,16 @@ function setUpInlineLayout() {
 document.addEventListener( 'DOMContentLoaded', function() {
 	// If there are no footnotes, bail early.
 	if ( document.querySelector( `.${ CLASSNAMES.WRAPPER }` ) === null ) {
+
+		const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
+		if (footerEl) {
+			footerEl.classList.add( CLASSNAMES.HIDDEN )
+		}
+
 		return null;
 	}
+
+	cloneContent();
 
 	function getFootenoteLayout() {
 		return window.innerWidth > 768 ? LAYOUTS.STACKED : LAYOUTS.INLINE;

@@ -231,6 +231,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
+ * Extra profile fields
+ */
+require get_template_directory() . '/inc/profile-fields.php';
+
+/**
  * Implement the masthead feature
  */
 require get_template_directory() . '/inc/masthead.php';

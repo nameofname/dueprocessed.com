@@ -17,7 +17,6 @@ $DP_FN_SHORTCODES = array('due_processed_footnote', 'dpfn');
 
 function due_processed_footnotes_func($atts, $content = "") {
 	global $DP_FN_USED_REF_NUMS; 
-	// $additional_note_classes = 'footnote-hidden';
   
   if (isset($atts['referencereset']) && $atts['referencereset'] == 'true') {
     $DP_FN_USED_REF_NUMS = array();
@@ -46,16 +45,20 @@ function due_processed_footnotes_func($atts, $content = "") {
   $data_num = str_replace('"',"\\\"", $display_number);
 
   $content = '
-    <span class="footnote-wrapper footnote-hidden" data-dpfn="' . $data_num . '">
-      <sup class="footnote-anchor" data-dpfn="' . $data_num . '">' . 
-        '<a href="javascript:void(0)" ' . $additional_attributes . '>' . $display_number . '</a>
-      </sup>' .
+    <span class="footnote-wrapper footnote-hidden" data-dpfn="' . $data_num . '"> 
+      <a class="footnote-anchor" data-dpfn="' . $data_num . '" href="javascript:void(0)" ' . $additional_attributes . '>' .
+        '<sup>'.  $display_number . '</sup>' .
+      '</a>' .
       '<span class="footnote-note" data-dpfn="' . $data_num . '">' .
           '<span class="footnote-note-number">' . 
             $data_num . 
             '<span class="footnote-note-sep">|</span>' . 
           '</span>' . 
           '<span class="footnote-note-content">' . $content . '</span>' .
+          '<a class="footnote-cta" data-dpfn="' . $data_num . '">
+            <span class="footnote-cta-more">More</span>
+            <span class="footnote-cta-less">Less</span>
+          </a>' .
       '</span>' . 
     '</span>'
     ;
@@ -133,7 +136,13 @@ function due_processed_footnotes_replace_dpfn_tag_with_shortcode($content = "") 
 
   return $final_content;
 }
+
+function due_processed_footnotes_append_footer($content = "") {
+  return $content . '<div class="footnotes-footer"><div class="footnotes-footer-title">Footnotes</div></div>';
+}
+
 add_filter( 'the_content', 'due_processed_footnotes_replace_dpfn_tag_with_shortcode' );
+add_filter( 'the_content', 'due_processed_footnotes_append_footer' );
 
 //////////////////////////////////////////////////////
 //

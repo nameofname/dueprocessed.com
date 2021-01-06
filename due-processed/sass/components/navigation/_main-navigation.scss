@@ -21,11 +21,6 @@
 		@include font-label();
 		position: relative;
 		white-space: nowrap;
-
-		// TODO: Ask Eunie; add hover styles?
-		// &:hover > a,
-		// &.focus > a {
-		// }
 	}
 
 	a {
@@ -35,12 +30,9 @@
 
 	.menu {
 		> .menu-item {
-			a {
+			> a {
 				line-height: 60px;
 				margin-right: $spacing__x-large;
-			}
-
-			> a {
 				border-bottom: 3px solid transparent;
 				&:hover,
 				&.focus {
@@ -75,20 +67,12 @@
 
 				.menu-item {
 					a {
-						line-height: normal;
 						margin-bottom: $spacing__x-small;
 					}
 				}
 			}
 		}
 	}
-
-	// TODO: Ask Eunie... special styles for these cases?
-	// .current_page_item > a,
-	// .current-menu-item > a,
-	// .current_page_ancestor > a,
-	// .current-menu-ancestor > a {
-	// }
 }
 
 /* Small menu. */
