@@ -887,12 +887,91 @@ textarea {
 	width: calc(100% - (2 * 60px));
 	max-width: 1440px;
 	margin: 0 auto;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	max-width: 1094px;
+	padding: 40px 0;
+	display: flex;
+	flex-direction: row;
 }
 @media (max-width: 768px) {
 	.site-info {
 		width: calc(100% - (2 * 20px));
+	}
+}
+.site-info a {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+	color: #151515;
+}
+@media (max-width: 768px) {
+	.site-info {
+		flex-direction: column;
+	}
+}
+
+.site-info-left {
+	flex: 3;
+}
+@media (max-width: 768px) {
+	.site-info-left {
+		border-bottom: 1px solid #ccc;
+	}
+}
+
+.site-info-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.site-info-menu .menu-item {
+	margin-bottom: 10px;
+}
+
+.site-info-right {
+	flex: 2;
+}
+@media (max-width: 768px) {
+	.site-info-right {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.site-info-row {
+	margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+	.site-info-row {
+		margin-bottom: 20px;
+	}
+}
+
+.site-info-label {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.sign-up-title {
+	font-weight: 400;
+}
+
+.copyright-desktop {
+	padding-top: 10px;
+}
+@media (max-width: 768px) {
+	.copyright-desktop {
+		display: none;
+	}
+}
+
+.copyright-mobile {
+	display: none;
+}
+@media (max-width: 768px) {
+	.copyright-mobile {
+		display: inline;
+		padding-top: 20px;
+		border-top: 1px solid #ccc;
 	}
 }
 
