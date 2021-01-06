@@ -19,7 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -89,15 +88,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -109,7 +104,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -135,7 +129,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -157,7 +150,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -223,7 +215,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -233,7 +224,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -379,7 +369,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -396,7 +385,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -413,7 +401,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -429,7 +416,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -456,6 +442,7 @@ h5,
 h6 {
 	clear: both;
 	margin: 0;
+	font-weight: normal;
 }
 
 h1 {
@@ -550,6 +537,7 @@ html {
 body {
 	background: #fff;
 }
+
 body.overflow-hidden {
 	overflow: hidden;
 }
@@ -623,22 +611,24 @@ a {
 	color: #005b83;
 	text-decoration: none;
 }
+
 a:visited {
 	color: #005b83;
 }
+
 a:hover {
 	text-decoration: underline;
 }
-a:hover,
-a:focus,
-a:active {
+
+a:hover, a:focus, a:active {
 	color: #005b83;
 }
+
 a:focus {
 	outline: none;
 }
-a:hover,
-a:active {
+
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -661,6 +651,7 @@ input[type="submit"] {
 	cursor: pointer;
 	outline: none;
 }
+
 .button:hover,
 button:hover,
 input[type="button"]:hover,
@@ -669,8 +660,8 @@ input[type="submit"]:hover {
 	opacity: 0.85;
 	color: #fff;
 }
-.button:active,
-.button:focus,
+
+.button:active, .button:focus,
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -681,6 +672,7 @@ input[type="submit"]:active,
 input[type="submit"]:focus {
 	opacity: 0.85;
 }
+
 .button:visited,
 button:visited,
 input[type="button"]:visited,
@@ -717,6 +709,7 @@ textarea {
 	padding-right: 10px;
 	height: 40px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -749,7 +742,6 @@ textarea {
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -757,26 +749,29 @@ textarea {
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 	padding-top: 20px;
 }
+
 .site-header a {
 	color: #151515;
 	text-decoration: none;
 }
-.site-header a:hover,
-.site-header a:focus,
-.site-header a:active {
+
+.site-header a:hover, .site-header a:focus, .site-header a:active {
 	color: #151515;
 }
+
 @media (max-width: 768px) {
 	.site-header {
 		padding-top: 15px;
 		padding-bottom: 10px;
 	}
 }
+
 @media (min-width: 769px) {
 	.site-header .search-form-wrapper {
 		width: 300px;
 	}
 }
+
 @media (max-width: 768px) {
 	.site-header .search-form-wrapper {
 		margin-top: 10px;
@@ -786,6 +781,7 @@ textarea {
 .site-header-top {
 	display: flex;
 }
+
 @media (min-width: 769px) {
 	.site-header-top {
 		width: calc(100% - (2 * 60px));
@@ -796,11 +792,13 @@ textarea {
 		align-items: center;
 	}
 }
+
 @media (min-width: 769px) and (max-width: 768px) {
 	.site-header-top {
 		width: calc(100% - (2 * 20px));
 	}
 }
+
 @media (max-width: 768px) {
 	.site-header-top {
 		margin: 0 20px;
@@ -812,11 +810,13 @@ textarea {
 	display: flex;
 	align-items: flex-end;
 }
+
 @media (min-width: 769px) {
 	.site-branding {
 		width: 300px;
 	}
 }
+
 @media (max-width: 768px) {
 	.site-branding {
 		width: 195px;
@@ -837,6 +837,7 @@ textarea {
 		display: flex;
 	}
 }
+
 @media (min-width: 769px) and (max-width: 768px) {
 	.site-header-bottom {
 		width: calc(100% - (2 * 20px));
@@ -855,10 +856,10 @@ textarea {
 .site-main {
 	margin: 20px;
 	overflow: hidden;
-
 	/* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 }
+
 @media (min-width: 769px) {
 	.site-main {
 		width: calc(100% - (2 * 60px));
@@ -869,6 +870,7 @@ textarea {
 		margin-bottom: 50px;
 	}
 }
+
 @media (min-width: 769px) and (max-width: 768px) {
 	.site-main {
 		width: calc(100% - (2 * 20px));
@@ -890,6 +892,7 @@ textarea {
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
+
 @media (max-width: 768px) {
 	.site-info {
 		width: calc(100% - (2 * 20px));
@@ -913,6 +916,7 @@ textarea {
 	display: flex;
 	flex-direction: row;
 }
+
 @media (max-width: 768px) {
 	.author-profile-body {
 		flex-direction: column;
@@ -924,6 +928,7 @@ textarea {
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	margin-bottom: 10px;
 }
+
 @media (max-width: 768px) {
 	.author-profile-title-desktop {
 		display: none;
@@ -943,6 +948,7 @@ textarea {
 .author-profile-name-desktop {
 	margin-bottom: 30px;
 }
+
 @media (max-width: 768px) {
 	.author-profile-name-desktop {
 		display: none;
@@ -953,6 +959,7 @@ textarea {
 	display: none;
 	margin-bottom: 30px;
 }
+
 @media (max-width: 768px) {
 	.author-profile-photo-name-container-mobile {
 		display: inline-block;
@@ -972,6 +979,7 @@ textarea {
 	width: 141px;
 	height: 141px;
 }
+
 @media (max-width: 768px) {
 	.author-profile-photo-desktop {
 		display: none;
@@ -995,6 +1003,7 @@ textarea {
 	vertical-align: top;
 	margin-right: 40px;
 }
+
 @media (max-width: 768px) {
 	.author-profile-bio {
 		margin: 0 0 20px;
@@ -1026,12 +1035,14 @@ textarea {
 	margin: 0;
 	width: 100vw;
 }
+
 .site-main-about .about-container {
 	display: flex;
 	justify-content: center;
 	width: 100vw;
 	margin-top: 20px;
 }
+
 .site-main-about h1,
 .site-main-about h2 {
 	font-size: 2.8rem;
@@ -1039,12 +1050,14 @@ textarea {
 	line-height: 30px;
 	text-align: center;
 }
+
 @media (max-width: 768px) {
 	.site-main-about p {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
 }
+
 .site-main-about .entry-content {
 	max-width: 636px;
 }
@@ -1052,53 +1065,57 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
-
 /* Main Navigation (Header)
 --------------------------------------------- */
 .main-navigation {
 	display: block;
 	width: 100%;
 }
+
 .main-navigation .main-navigation ul {
 	display: flex;
 }
+
 .main-navigation .menu,
 .main-navigation .sub-menu {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
+
 .main-navigation .menu {
 	display: flex;
 }
+
 .main-navigation .menu-item {
 	font-size: 1.6rem;
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	position: relative;
 	white-space: nowrap;
 }
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
-.main-navigation .menu > .menu-item a {
+
+.main-navigation .menu > .menu-item > a {
 	line-height: 60px;
 	margin-right: 50px;
-}
-.main-navigation .menu > .menu-item > a {
 	border-bottom: 3px solid transparent;
 }
-.main-navigation .menu > .menu-item > a:hover,
-.main-navigation .menu > .menu-item > a.focus {
+
+.main-navigation .menu > .menu-item > a:hover, .main-navigation .menu > .menu-item > a.focus {
 	border-bottom: 3px solid #005b83;
 }
+
 .main-navigation .menu > .menu-item:hover > .sub-menu,
 .main-navigation .menu > .menu-item.focus > .sub-menu {
 	display: block;
 }
+
 @media (min-width: 769px) {
 	.main-navigation .menu > .menu-item > .sub-menu {
 		background-color: #fff;
@@ -1114,11 +1131,12 @@ textarea {
 		z-index: 99999;
 	}
 }
+
 .main-navigation .menu > .menu-item > .sub-menu .sub-menu {
 	margin-left: 10px;
 }
+
 .main-navigation .menu > .menu-item > .sub-menu .menu-item a {
-	line-height: normal;
 	margin-bottom: 10px;
 }
 
@@ -1131,15 +1149,18 @@ textarea {
 	background: #fff;
 	color: #151515;
 }
+
 .main-navigation-icon:hover,
 .main-navigation-icon.toggled:hover {
 	opacity: 0.85;
 	color: #151515;
 }
+
 .main-navigation-icon > span,
 .main-navigation-icon.toggled > span {
 	display: inline-block;
 }
+
 .main-navigation-icon > span.main-navigation-close,
 .main-navigation-icon.toggled > span.main-navigation-close {
 	padding: 6px;
@@ -1212,10 +1233,8 @@ textarea {
 
 /* Other Navigation (Comments, Posts, Etc.)
 --------------------------------------------- */
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -1266,6 +1285,7 @@ input.search-field {
 	width: 40px;
 	padding: 10px;
 }
+
 @media (max-width: 768px) {
 	.search-submit {
 		background: #fff;
@@ -1346,6 +1366,11 @@ input.search-field {
 	margin: 0 0 1.5em;
 }
 
+.cat-links {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
 .entry-footer,
 .entry-meta {
 	font-size: 1.6rem;
@@ -1359,6 +1384,7 @@ input.search-field {
 	margin: 0 auto;
 	max-width: 872px;
 }
+
 @media (max-width: 768px) {
 	.single-post .post,
 	.single-post .post-navigation {
@@ -1377,10 +1403,8 @@ input.search-field {
 	margin-bottom: 40px;
 }
 
-.single-post .entry-footer {
-	grid-row: 2;
-	grid-column: 1 / 3;
-	text-align: center;
+.single-post .entry-title {
+	margin: 20px 0;
 }
 
 .single-post .entry-header {
@@ -1403,6 +1427,7 @@ input.search-field {
 	max-width: 1094px;
 	margin: 0 auto;
 }
+
 @media (max-width: 768px) {
 	.search-results-wrapper {
 		grid-template-columns: 1fr;
@@ -1410,6 +1435,7 @@ input.search-field {
 		max-width: 375px;
 	}
 }
+
 @media (max-width: 768px) {
 	.search-results-wrapper > .post {
 		border-bottom: 1px solid #ccc;
@@ -1422,6 +1448,7 @@ input.search-field {
 		border-bottom: 0;
 	}
 }
+
 .search-results-wrapper > .post > .entry-summary > p {
 	margin: 5px 0;
 }
@@ -1434,7 +1461,6 @@ input.search-field {
 
 /* Footnotes
 --------------------------------------------- */
-
 /* Shared
 --------------------------------------------- */
 .footnote-wrapper {
@@ -1444,8 +1470,7 @@ input.search-field {
 }
 
 .footnote-anchor {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding: 4px;
 }
 
 .footnote a {
@@ -1457,9 +1482,11 @@ input.search-field {
 	grid-template-columns: 15px 1fr;
 	cursor: pointer;
 }
+
 .footnote-note a {
 	overflow-wrap: break-word;
 }
+
 .footnote-hidden .footnote-note {
 	visibility: hidden;
 }
@@ -1479,11 +1506,25 @@ input.search-field {
 	margin-right: 1px;
 }
 
+.footnote-stacked .footnote-anchor:hover,
+.footnote-open .footnote-stacked .footnote-anchor {
+	background: #005b83;
+	color: #fff;
+}
+
 .footnote-stacked .footnote-note-content {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	overflow: hidden;
+}
+
+.footnote-stacked .footnote-cta-more {
+	display: inline;
+}
+
+.footnote-stacked .footnote-cta-less {
+	display: none;
 }
 
 .footnote-stacked.footnote-open .footnote-note {
@@ -1497,17 +1538,35 @@ input.search-field {
 	overflow: auto;
 }
 
+.footnote-stacked.footnote-open .footnote-cta-more {
+	display: none;
+}
+
+.footnote-stacked.footnote-open .footnote-cta-less {
+	display: inline;
+}
+
+.footnote-stacked .footnote-cta {
+	display: block;
+	grid-row: 2;
+	grid-column: 2;
+}
+
 /* Inline (Mobile) Layout
 --------------------------------------------- */
 .footnote-inline .footnote-note {
 	display: none;
-	background: #e3eff4;
+	background: #f5f5f5;
 	padding: 10px 50px 10px 20px;
 	margin: 10px 0;
 }
 
 .footnote-inline.footnote-open .footnote-note {
 	display: grid;
+}
+
+.footnote-inline .footnote-cta {
+	display: none;
 }
 
 /* Comments
@@ -1525,6 +1584,7 @@ input.search-field {
 .widget {
 	margin: 0 0 1.5em;
 }
+
 .widget select {
 	max-width: 100%;
 }
@@ -1551,11 +1611,13 @@ input.search-field {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
@@ -1628,6 +1690,7 @@ input.search-field {
 	justify-content: center;
 	margin-bottom: 20px;
 }
+
 @media (max-width: 768px) {
 	.masthead {
 		flex-direction: column;
@@ -1648,6 +1711,7 @@ input.search-field {
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
+
 @media (max-width: 768px) {
 	.masthead-image {
 		width: 70px;
@@ -1671,6 +1735,7 @@ input.search-field {
 	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
 	margin: 0 0 10px;
 }
+
 @media (max-width: 768px) {
 	.masthead-title {
 		margin: 0;
@@ -1687,10 +1752,8 @@ input.search-field {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -1705,10 +1768,8 @@ input.search-field {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -1722,6 +1783,7 @@ input.search-field {
 	width: 1px;
 	word-wrap: normal !important;
 }
+
 .screen-reader-text:focus {
 	background-color: #f5f5f5;
 	border-radius: 3px;
@@ -1750,20 +1812,16 @@ input.search-field {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -1791,3 +1849,5 @@ input.search-field {
 .wp-block-due-processed-custom-paragraph p {
 	width: 636px;
 }
+
+/*# sourceMappingURL=style.css.map */

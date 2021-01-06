@@ -11,6 +11,7 @@ const CLASSNAMES = {
 	WRAPPER: 'footnote-wrapper',
 	ANCHOR: 'footnote-anchor',
 	NOTE: 'footnote-note',
+	CTA: 'footnote-cta',
 
 	/* Layout Classes */
 	STACKED: 'footnote-stacked',
@@ -58,7 +59,7 @@ function toggleOpenState( event, closeOpened = true ) {
  * @return {function(): void} Cleanup function removes sidebar classes and event listeners
  */
 function setUpStackedLayout() {
-	function onAnchorOrFootnoteClick( event ) {
+	function onAnchorOrCtaClick( event ) {
 		toggleOpenState( event );
 	}
 
@@ -102,8 +103,14 @@ function setUpStackedLayout() {
 	} );
 
 	const anchorEls = Array.from( document.querySelectorAll( `.${ CLASSNAMES.ANCHOR }` ) ) || [];
+	const ctaEls = Array.from( document.querySelectorAll( `.${ CLASSNAMES.CTA }` ) ) || [];
+
 	anchorEls.forEach( ( anchorEl ) => {
-		anchorEl.addEventListener( 'click', onAnchorOrFootnoteClick );
+		anchorEl.addEventListener( 'click', onAnchorOrCtaClick );
+	} );
+
+	ctaEls.forEach( ( ctaEls ) => {
+		ctaEls.addEventListener( 'click', onAnchorOrCtaClick );
 	} );
 
 	footnoteWrapperEls.forEach( ( footnoteWrapperEl ) => {
@@ -119,7 +126,10 @@ function setUpStackedLayout() {
 			footnoteEl.removeAttribute( 'style' );
 		} );
 		anchorEls.forEach( ( anchorEl ) => {
-			anchorEl.removeEventListener( 'click', onAnchorOrFootnoteClick );
+			anchorEl.removeEventListener( 'click', onAnchorOrCtaClick );
+		} );
+		ctaEls.forEach( ( ctaEl ) => {
+			ctaEl.removeEventListener( 'click', onAnchorOrCtaClick );
 		} );
 	};
 }

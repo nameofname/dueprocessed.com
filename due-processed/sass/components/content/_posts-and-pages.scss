@@ -32,6 +32,10 @@
 	margin: 0 0 1.5em;
 }
 
+.cat-links {
+	@include font-label();
+}
+
 .entry-footer,
 .entry-meta {
 	@include font-label();
