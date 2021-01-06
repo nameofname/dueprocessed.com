@@ -1,7 +1,43 @@
 /* Shared
 --------------------------------------------- */
-.footnote-wrapper {
+
+.footnote-wrapper,
+.footnotes-footer {
+	display: none;
+}
+
+.footnotes-footer {
+	@include breakpoint-below(tablet-portrait) {
+		display: block;
+	}
+
+	&.footnote-hidden {
+		display: none;
+	}
+
 	@include font-body($size: small);
+
+	border-top: 1px solid $color__border;
+	margin-top: $spacing__small;
+	padding-top: $spacing__small;
+
+	.footnotes-footer-title {
+		margin-bottom: $spacing__small;
+		@include font-label();
+	}
+
+	.footnote-cta {
+		display: none;
+	}
+}
+
+.footnote-wrapper {
+	display: none;
+	@include font-body($size: small);
+
+	.single-post & {
+		display: inline;
+	}
 }
 
 .footnote-anchor {

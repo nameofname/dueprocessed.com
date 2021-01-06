@@ -32,8 +32,20 @@
 	margin: 0 0 1.5em;
 }
 
-.cat-links {
+.edit-link {
+	display: block;
+	text-decoration: underline;
+}
+
+.edit-link,
+.categories-links,
+.tags-links {
 	@include font-label();
+}
+
+// TODO: Ask Eunie about tags; hiding for now
+.tags-links {
+	display: none;
 }
 
 .entry-footer,

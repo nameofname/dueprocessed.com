@@ -136,7 +136,13 @@ function due_processed_footnotes_replace_dpfn_tag_with_shortcode($content = "") 
 
   return $final_content;
 }
+
+function due_processed_footnotes_append_footer($content = "") {
+  return $content . '<div class="footnotes-footer"><div class="footnotes-footer-title">Footnotes</div></div>';
+}
+
 add_filter( 'the_content', 'due_processed_footnotes_replace_dpfn_tag_with_shortcode' );
+add_filter( 'the_content', 'due_processed_footnotes_append_footer' );
 
 //////////////////////////////////////////////////////
 //

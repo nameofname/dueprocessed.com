@@ -67,11 +67,12 @@ if (!function_exists('due_processed_categories_list')) :
 	function due_processed_categories_list() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'due-processed' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'due-processed' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="categories-links">' . esc_html__( '%1$s', 'due-processed' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
@@ -106,6 +107,7 @@ if ( ! function_exists( 'due_processed_entry_footer' ) ) :
 			'<span class="edit-link">',
 			'</span>'
 		);
+
 	}
 endif;
 

@@ -12,6 +12,7 @@ const CLASSNAMES = {
 	ANCHOR: 'footnote-anchor',
 	NOTE: 'footnote-note',
 	CTA: 'footnote-cta',
+	FOOTER: 'footnotes-footer',
 
 	/* Layout Classes */
 	STACKED: 'footnote-stacked',
@@ -51,6 +52,21 @@ function toggleOpenState( event, closeOpened = true ) {
 			} );
 		}
 	}
+}
+
+function cloneContent() {
+	const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
+
+	if (!footerEl) {
+		return null;
+	}
+
+	const contentEls = Array.from(document.getElementsByClassName( `${ CLASSNAMES.NOTE }` ) || []);
+
+	contentEls.forEach((contentEl) => {
+		const clone = contentEl.cloneNode(true);
+		footerEl.append(clone);
+	});
 }
 
 /**
@@ -167,8 +183,16 @@ function setUpInlineLayout() {
 document.addEventListener( 'DOMContentLoaded', function() {
 	// If there are no footnotes, bail early.
 	if ( document.querySelector( `.${ CLASSNAMES.WRAPPER }` ) === null ) {
+
+		const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
+		if (footerEl) {
+			footerEl.classList.add( CLASSNAMES.HIDDEN )
+		}
+
 		return null;
 	}
+
+	cloneContent();
 
 	function getFootenoteLayout() {
 		return window.innerWidth > 768 ? LAYOUTS.STACKED : LAYOUTS.INLINE;
