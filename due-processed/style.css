@@ -1436,8 +1436,10 @@ input.search-field {
 	}
 }
 
-.single-post .byline {
-	display: block;
+@media (max-width: 768px) {
+	.single-post .byline {
+		display: block;
+	}
 }
 
 .single-post .entry-content {
@@ -1572,8 +1574,7 @@ input.search-field {
 	margin-right: 1px;
 }
 
-.footnote-stacked .footnote-anchor:hover,
-.footnote-open .footnote-stacked .footnote-anchor {
+.footnote-stacked .footnote-anchor:hover {
 	background: #005b83;
 	color: #fff;
 }
@@ -1591,6 +1592,11 @@ input.search-field {
 
 .footnote-stacked .footnote-cta-less {
 	display: none;
+}
+
+.footnote-stacked.footnote-open .footnote-anchor {
+	background: #005b83;
+	color: #fff;
 }
 
 .footnote-stacked.footnote-open .footnote-note {

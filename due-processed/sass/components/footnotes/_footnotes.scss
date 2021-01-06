@@ -78,8 +78,7 @@
 	}
 
 	.footnote-anchor {
-		&:hover,
-		.footnote-open & {
+		&:hover {
 			background: $color__background-button;
 			color: $color__text-button;
 		}
@@ -101,6 +100,11 @@
 	}
 
 	&.footnote-open {
+		.footnote-anchor {
+			background: $color__background-button;
+			color: $color__text-button;
+		}
+
 		.footnote-note {
 			background: $color__background-body;
 			box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.75);

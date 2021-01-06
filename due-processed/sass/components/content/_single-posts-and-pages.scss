@@ -41,7 +41,9 @@
 	}
 
 	.byline {
-		display: block;
+		@include breakpoint-below(tablet-portrait) {
+			display: block;
+		}
 	}
 
 	.entry-content {
