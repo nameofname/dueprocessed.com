@@ -16,7 +16,7 @@
 }
 
 .page-title {
-	margin: $spacing__medium 0 $spacing__small;
+	margin: 0 0 $spacing__medium;
 	text-align: center;
 	@include font-header($size: large);
 }
@@ -51,4 +51,11 @@
 .entry-footer,
 .entry-meta {
 	@include font-label();
+}
+
+.entry-title {
+	a,
+	a:visited {
+		color: $color__primary_grey;
+	}
 }

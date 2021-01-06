@@ -1,19 +1,54 @@
-.featured-article-wrapper {
+.page-title.featured-article-title {
+	margin: $spacing__large 0 $spacing__medium;
+	@include breakpoint-below(tablet-portrait) {
+		margin: $spacing__small 0;
+	}
+}
+
+.featured-article-wrapper-outer {
+	width: 100vw;
+	background: $color__background-secondary;
+}
+
+.featured-article-wrapper-inner {
 	// entire carousel
+	@include primary-page-width();
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	scroll-snap-type: x mandatory;
+
+	// hide scrollbar
+	-ms-overflow-style: none; // IE and Edge
+	scrollbar-width: none; // Firefox
+	&::-webkit-scrollbar {
+		display: none; // Chrome, Safari and Opera
+	}
 }
 .featured-article-container {
 	// single carousel element
-	display: grid;
-	grid-template-columns: repeat(2, 50%);
-	grid-gap: 40px;
-	background: $color__background-secondary;
+	display: flex;
+	width: 100%;
+	flex-shrink: 0;
+	max-width: 100%;
 	max-height: 450px;
-	overflow: hidden;
-	margin-bottom: 70px;
+	scroll-snap-align: center;
+	margin-right: $spacing__x-large;
+	@include breakpoint-below(tablet-portrait) {
+		flex-direction: column-reverse;
+		max-height: none;
+	}
 }
+
 .featured-article-content {
 	max-width: 527px;
-	margin: 89px 0 0 60px;
+	margin: 89px 40px 30px 60px;
+	flex: 1;
+	@include breakpoint-below(tablet-portrait) {
+		margin: $spacing__small;
+		max-width: none;
+		text-align: center;
+	}
 }
 .featured-article-header {
 	// h3
@@ -22,6 +57,46 @@
 .featured-article-lede {
 	// p
 	@include font-body($size: "medium");
+	text-align: left;
 }
 
-.featured-article-image {}
+.featured-article-image-container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: $spacing__medium $spacing__medium $spacing__medium 0;
+	@include breakpoint-below(tablet-portrait) {
+		padding: 0;
+	}
+}
+
+.featured-article-image {
+	max-height: 390px;
+	width: auto;
+	@include breakpoint-below(tablet-portrait) {
+		width: 100%;
+		max-height: none;
+	}
+}
+
+.featured-article-carousel-dots-wrapper {
+	width: 100%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	margin-top: $spacing__small;
+}
+
+.featured-article-carousel-dot {
+	width: 16px;
+	height: 16px;
+	border: 1px solid $color__primary_grey;
+	border-radius: 10px;
+	margin: $spacing__x-small;
+	cursor: pointer;
+}
+
+.featured-article-carousel-dot-selected {
+	background-color: $color__primary_grey;
+}

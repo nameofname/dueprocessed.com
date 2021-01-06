@@ -155,7 +155,7 @@ function due_processed_footnotes_enqueue_scripts_styles() {
  	wp_enqueue_script('due-processed-footnotes', get_template_directory_uri() . '/js/footnotes.js', array(), DUE_PROCESSED_VERSION, true);
 }
 
-add_action('wp_enqueue_scripts', 'due_processed_footnotes_enqueue_scripts_styles'); 
+add_action('wp_enqueue_scripts', 'due_processed_footnotes_enqueue_scripts_styles');
 
 //////////////////////////////////////////////////////
 //
