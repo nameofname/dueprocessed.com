@@ -19,7 +19,7 @@ $copyright = sprintf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), 
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'footer-menu',
+						'theme_location' => 'footer',
 						'menu_id'        => 'footer-menu',
 						'menu_class'     => 'site-info-menu',
 					)
