@@ -21,7 +21,7 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=7.3.11",
     "wpackagist-plugin/akismet": "^4.1",
     "wpackagist-plugin/amp": "^2.0",
     "wpackagist-plugin/coblocks": "^2.5",

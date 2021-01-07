@@ -10,4 +10,4 @@ wp-content/themes/*
 due-processed/vendor/*
 wp-content/plugins/*
 settings.json
-due-processed.zip
+*.zip

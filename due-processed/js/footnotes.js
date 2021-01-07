@@ -55,18 +55,18 @@ function toggleOpenState( event, closeOpened = true ) {
 }
 
 function cloneContent() {
-	const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
+	const footerEl = ( document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [] )[ 0 ];
 
-	if (!footerEl) {
+	if ( ! footerEl ) {
 		return null;
 	}
 
-	const contentEls = Array.from(document.getElementsByClassName( `${ CLASSNAMES.NOTE }` ) || []);
+	const contentEls = Array.from( document.getElementsByClassName( `${ CLASSNAMES.NOTE }` ) || [] );
 
-	contentEls.forEach((contentEl) => {
-		const clone = contentEl.cloneNode(true);
-		footerEl.append(clone);
-	});
+	contentEls.forEach( ( contentEl ) => {
+		const clone = contentEl.cloneNode( true );
+		footerEl.append( clone );
+	} );
 }
 
 /**
@@ -125,8 +125,8 @@ function setUpStackedLayout() {
 		anchorEl.addEventListener( 'click', onAnchorOrCtaClick );
 	} );
 
-	ctaEls.forEach( ( ctaEls ) => {
-		ctaEls.addEventListener( 'click', onAnchorOrCtaClick );
+	ctaEls.forEach( ( ctaEl ) => {
+		ctaEl.addEventListener( 'click', onAnchorOrCtaClick );
 	} );
 
 	footnoteWrapperEls.forEach( ( footnoteWrapperEl ) => {
@@ -182,11 +182,11 @@ function setUpInlineLayout() {
 
 document.addEventListener( 'DOMContentLoaded', function() {
 	// If there are no footnotes, bail early.
-	if ( document.querySelector( `.${ CLASSNAMES.WRAPPER }` ) === null ) {
 
-		const footerEl = (document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [])[0];
-		if (footerEl) {
-			footerEl.classList.add( CLASSNAMES.HIDDEN )
+	if ( document.querySelector( `.${ CLASSNAMES.WRAPPER }` ) === null ) {
+		const footerEl = ( document.getElementsByClassName( `${ CLASSNAMES.FOOTER }` ) || [] )[ 0 ];
+		if ( footerEl ) {
+			footerEl.classList.add( CLASSNAMES.HIDDEN );
 		}
 
 		return null;

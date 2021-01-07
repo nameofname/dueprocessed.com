@@ -1,8 +1,8 @@
 /*!
-Theme Name: Due_Processed
+Theme Name: Due Processed
 Author: Due Processed
 Description: Theme for dueprocessed.com
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -456,6 +456,7 @@ h5,
 h6 {
 	clear: both;
 	margin: 0;
+	font-weight: 400;
 }
 
 h1 {
@@ -1164,11 +1165,9 @@ textarea {
 	display: block;
 	text-decoration: none;
 }
-.main-navigation .menu > .menu-item a {
+.main-navigation .menu > .menu-item > a {
 	line-height: 60px;
 	margin-left: 50px;
-}
-.main-navigation .menu > .menu-item > a {
 	border-bottom: 3px solid transparent;
 }
 .main-navigation .menu > .menu-item > a:hover,
@@ -1198,7 +1197,6 @@ textarea {
 	margin-right: 10px;
 }
 .main-navigation .menu > .menu-item > .sub-menu .menu-item a {
-	line-height: normal;
 	margin-bottom: 10px;
 }
 
@@ -1520,6 +1518,22 @@ input.search-field {
 	margin: 0 0 1.5em;
 }
 
+.edit-link {
+	display: block;
+	text-decoration: underline;
+}
+
+.edit-link,
+.categories-links,
+.tags-links {
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.tags-links {
+	display: none;
+}
+
 .entry-footer,
 .entry-meta {
 	font-size: 1.6rem;
@@ -1556,16 +1570,31 @@ input.search-field {
 	margin-bottom: 40px;
 }
 
-.single-post .entry-footer {
-	grid-row: 2;
-	grid-column: 1 / 3;
-	text-align: center;
+.single-post .entry-title {
+	margin: 20px 0;
 }
 
 .single-post .entry-header {
 	grid-row: 3;
 	grid-column: 1 / 3;
 	text-align: center;
+}
+@media (max-width: 768px) {
+	.single-post .entry-header {
+		text-align: right;
+	}
+}
+
+@media (max-width: 768px) {
+	.single-post .entry-meta-divider {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.single-post .byline {
+		display: block;
+	}
 }
 
 .single-post .entry-content {
@@ -1616,15 +1645,48 @@ input.search-field {
 
 /* Shared
 --------------------------------------------- */
+.footnote-wrapper,
+.footnotes-footer {
+	display: none;
+}
+
+.footnotes-footer {
+	font-size: 1.2rem;
+	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
+	line-height: 20px;
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+@media (max-width: 768px) {
+	.footnotes-footer {
+		display: block;
+	}
+}
+.footnotes-footer.footnote-hidden {
+	display: none;
+}
+.footnotes-footer .footnotes-footer-title {
+	margin-bottom: 20px;
+	font-size: 1.6rem;
+	font-family: "Work Sans Light", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+.footnotes-footer .footnote-cta {
+	display: none;
+}
+
 .footnote-wrapper {
+	display: none;
 	font-size: 1.2rem;
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
 	line-height: 20px;
 }
+.single-post .footnote-wrapper {
+	display: inline;
+}
 
 .footnote-anchor {
-	padding-right: 2px;
-	padding-left: 2px;
+	padding: 4px;
 }
 
 .footnote a {
@@ -1658,11 +1720,29 @@ input.search-field {
 	margin-left: 1px;
 }
 
+.footnote-stacked .footnote-anchor:hover {
+	background: #005b83;
+	color: #fff;
+}
+
 .footnote-stacked .footnote-note-content {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
+	-webkit-line-clamp: 2;
 	overflow: hidden;
+}
+
+.footnote-stacked .footnote-cta-more {
+	display: inline;
+}
+
+.footnote-stacked .footnote-cta-less {
+	display: none;
+}
+
+.footnote-stacked.footnote-open .footnote-anchor {
+	background: #005b83;
+	color: #fff;
 }
 
 .footnote-stacked.footnote-open .footnote-note {
@@ -1676,17 +1756,35 @@ input.search-field {
 	overflow: auto;
 }
 
+.footnote-stacked.footnote-open .footnote-cta-more {
+	display: none;
+}
+
+.footnote-stacked.footnote-open .footnote-cta-less {
+	display: inline;
+}
+
+.footnote-stacked .footnote-cta {
+	display: block;
+	grid-row: 2;
+	grid-column: 2;
+}
+
 /* Inline (Mobile) Layout
 --------------------------------------------- */
 .footnote-inline .footnote-note {
 	display: none;
-	background: #e3eff4;
+	background: #f5f5f5;
 	padding: 10px 20px 10px 50px;
 	margin: 10px 0;
 }
 
 .footnote-inline.footnote-open .footnote-note {
 	display: grid;
+}
+
+.footnote-inline .footnote-cta {
+	display: none;
 }
 
 /* Comments
