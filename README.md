@@ -42,3 +42,13 @@ You can find additional documentation about the `_s` starter theme on [Github](h
 ## Plugin development
 
 Add plugins in `./wp-content/plugins`.
+
+## Custom Blocks and Functionality
+
+Add details about our custom blocks and functionality we added.
+
+### Footnotes
+
+### Featured Carousel
+
+... and more!
