@@ -18,16 +18,11 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'due-processed' ); ?></p>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'due-processed' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Popular Categories', 'due-processed' ); ?></h2>
 						<ul>
 							<?php
 							wp_list_categories(
@@ -45,9 +40,6 @@ get_header();
 
 					<?php
 					/* translators: %1$s: smiley */
-					$due_processed_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'due-processed' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$due_processed_archive_content" );
-
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
 
