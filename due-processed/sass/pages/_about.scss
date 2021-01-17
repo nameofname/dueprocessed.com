@@ -1,7 +1,9 @@
 .about-container {
-	display: flex;
-	justify-content: center;
-	margin-top: $spacing__small;
+	@include breakpoint-above(tablet-landscape) {
+		display: flex;
+		justify-content: center;
+		margin-top: $spacing__small;
+	}
 
 	h1,
 	h2 {

@@ -1101,11 +1101,14 @@ textarea {
 	margin-left: 10px;
 }
 
-.about-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
+@media (min-width: 769px) {
+	.about-container {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
 }
+
 .about-container h1,
 .about-container h2 {
 	font-size: 2.8rem;
@@ -1113,12 +1116,14 @@ textarea {
 	line-height: 30px;
 	text-align: center;
 }
+
 @media (max-width: 768px) {
 	.about-container p {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
 }
+
 .about-container .entry-content {
 	max-width: 636px;
 }
@@ -2053,10 +2058,14 @@ input.search-field {
 .wp-block-due-processed-custom-paragraph {
 	display: flex;
 	justify-content: center;
-	width: 200vw;
-	position: relative;
-	left: calc(-100vw + 50%);
 	background-color: #e3eff4;
+}
+@media (min-width: 769px) {
+	.wp-block-due-processed-custom-paragraph {
+		width: 200vw;
+		position: relative;
+		left: calc(-100vw + 50%);
+	}
 }
 
 .wp-block-due-processed-custom-paragraph p {
