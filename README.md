@@ -43,12 +43,17 @@ You can find additional documentation about the `_s` starter theme on [Github](h
 
 Add plugins in `./wp-content/plugins`.
 
-## Custom Blocks and Functionality
+## Custom Paragraph Block
+To add a paragraph with a blue background to a page, follow these steps:
+1. When editing the page, click on the `+` button in the top-left corner of the screen
+2. A search bar should appear. Search for "custom paragraph"
+3. Click on the result that appears. A new paragraph with a blue background should appear on the page. You can edit the text in this paragraph like any other
 
-Add details about our custom blocks and functionality we added.
+## About Page
+The About page can show a list of contributors to the site. To edit this list, go to the edit view for the About page and scroll to the very bottom where it says "Page Options". To add a new entry to the list, click on "Add Entry" and fill out the fields
 
 ### Footnotes
 
-### Featured Carousel
+### Featured Articles
 
-... and more!
+The "Featured Articles" carousel on the home page will display articles with the "featured" tag, in order of publish date. To tag an article, go to the edit view and you should see a "tags" section in the right sidebar. Add a tag by typing it into the text box

@@ -856,9 +856,7 @@ textarea {
 --------------------------------------------------------------*/
 .site-main {
 	margin: 20px;
-	overflow: hidden;
-
-	/* Resolves issue with <pre> elements forcing full width. */
+	overflow: visible;
 	position: relative;
 }
 @media (min-width: 769px) {
@@ -1103,30 +1101,25 @@ textarea {
 	margin-left: 10px;
 }
 
-.site-main-about {
-	margin: 0;
-	width: 100vw;
-}
-.site-main-about .about-container {
+.about-container {
 	display: flex;
 	justify-content: center;
-	width: 100vw;
 	margin-top: 20px;
 }
-.site-main-about h1,
-.site-main-about h2 {
+.about-container h1,
+.about-container h2 {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
 	line-height: 30px;
 	text-align: center;
 }
 @media (max-width: 768px) {
-	.site-main-about p {
+	.about-container p {
 		margin-left: 20px;
 		margin-right: 20px;
 	}
 }
-.site-main-about .entry-content {
+.about-container .entry-content {
 	max-width: 636px;
 }
 
@@ -1894,9 +1887,10 @@ input.search-field {
 /* Masthead
 --------------------------------------------- */
 .masthead-header {
-	font-size: 1.6rem;
-	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
-	line-height: 24px;
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 30px;
+	text-align: center;
 	margin-bottom: 40px;
 }
 
@@ -2059,9 +2053,9 @@ input.search-field {
 .wp-block-due-processed-custom-paragraph {
 	display: flex;
 	justify-content: center;
-	width: 100vw;
+	width: 200vw;
 	position: relative;
-	left: calc(-50vw + 50%);
+	left: calc(-100vw + 50%);
 	background-color: #e3eff4;
 }
 
