@@ -6,6 +6,5 @@
 		margin-bottom: $spacing__x-large;
 	}
 	margin: $spacing__small;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 	position: relative;
 }
