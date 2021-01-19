@@ -32,7 +32,6 @@ You can find additional documentation about the `_s` starter theme on [Github](h
 
 - Once you are satisfied with your changes in the `./due-processed` directory and want to deploy do the following : 
 	- Version the theme by updating the version number in the style.scss file
-		- TODO ! This should be scripted. 
 	- Run the bundle command with `npm run bundle`. 
 - This command will lint, compile, and compress yoru theme into a .zip file which it outputs to `due-processed.zip`.
 - The zip file can then be uploaded to the /wp-admin theme page.
