@@ -166,6 +166,15 @@ function due_processed_widgets_init() {
 add_action( 'widgets_init', 'due_processed_widgets_init' );
 
 /**
+ * Change the excerpt more string
+ */
+function due_processed_excerpt_more( $more ) {
+	return '&hellip;';
+}
+
+add_filter( 'excerpt_more', 'due_processed_excerpt_more' );
+
+/**
  * Enqueue scripts and styles.
  */
 function due_processed_scripts() {
@@ -210,6 +219,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Functions to support custom footnotes.
  */
 require get_template_directory() . '/inc/footnotes.php';
+
+/**
+ * Functions to support social share icons on post.
+ */
+require get_template_directory() . '/inc/social-share.php';
 
 /**
  * Customizer additions.

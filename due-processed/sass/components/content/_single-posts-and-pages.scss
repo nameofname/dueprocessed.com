@@ -1,15 +1,20 @@
 .single-post {
-	.post,
-	.post-navigation {
+        .post {
 		display: grid;
 		grid-template-columns: minmax(0, 640px) 232px;
 		margin: 0 auto;
 		max-width: 872px;
+
 		@include breakpoint-below(tablet-portrait) {
 			grid-template-columns: 1fr;
 			max-width: none;
 		}
 	}
+
+        .post-navigation {
+                display: none;
+        }
+
 	.post {
 		position: relative;
 	}
@@ -18,6 +23,23 @@
 		grid-row: 1;
 		grid-column: 1 / 3;
 		margin-bottom: $spacing__large;
+
+                @include breakpoint-above(tablet-landscape) {
+                        height: 484px;
+                        text-align: center;
+
+                        img {
+                                height: 100%;
+                                width: auto;
+                        }
+                }
+
+                @include breakpoint-below(tablet-portrait) {
+                        @include primary-viewport-width();
+                        grid-row: 3;
+                        margin-top: $spacing__small;
+                        margin-bottom: 0;
+                }
 	}
 
 	.entry-title {
@@ -30,9 +52,21 @@
 		text-align: center;
 
 		@include breakpoint-below(tablet-portrait) {
+                        grid-row: 1;
 			text-align: left;
 		}
 	}
+
+        .entry-title-sep {
+                height: 1px;
+                width: 56px;
+                background: $color__border;
+                margin: 0 auto $spacing__small;
+
+                @include breakpoint-below(tablet-portrait) {
+                        display: none;
+                }
+        }
 
 	.entry-meta-divider {
 		@include breakpoint-below(tablet-portrait) {

@@ -19,3 +19,9 @@
 		width: calc(100% - (2 * 20px));
 	}
 }
+
+@mixin primary-viewport-width {
+        position: relative;
+        width: 100vw;
+        left: calc((100vw - 100%) / -2);
+}

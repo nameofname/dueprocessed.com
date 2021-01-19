@@ -24,6 +24,7 @@
 
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
+                        ?><div class="entry-title-sep"></div><?php
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -53,13 +54,6 @@
 					)
 				),
 				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'due-processed' ),
-				'after'  => '</div>',
 			)
 		);
 		?>

@@ -150,7 +150,6 @@ add_filter( 'the_content', 'due_processed_footnotes_append_footer' );
 //
 //////////////////////////////////////////////////////
  
-// TODO: Add styles to main style sheet
 function due_processed_footnotes_enqueue_scripts_styles() {
  	wp_enqueue_script('due-processed-footnotes', get_template_directory_uri() . '/js/footnotes.js', array(), DUE_PROCESSED_VERSION, true);
 }
