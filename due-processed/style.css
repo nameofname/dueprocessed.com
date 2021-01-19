@@ -856,7 +856,6 @@ textarea {
 --------------------------------------------------------------*/
 .site-main {
 	margin: 20px;
-	overflow: visible;
 	position: relative;
 }
 @media (min-width: 769px) {
