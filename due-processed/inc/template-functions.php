@@ -35,3 +35,53 @@ function due_processed_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'due_processed_pingback_header' );
+ 
+function due_processed_get_category_name_header() {
+	global $wp_query;
+	global $post; 
+	$cat = get_the_category($post->ID);
+	$posts_found = $wp_query->found_posts;
+
+	$cat_name = '';
+	if (! empty( $cat )) {
+		$cat_name = $cat[0]->cat_name;
+	}
+
+	if ( $posts_found ) {
+		// # results for "<category>"
+		$subheading = sprintf(
+			esc_html__( '%1$s for "%2$s"', 'due-processed' ),
+			$posts_found === 1 ? 'Result' : 'Results',
+			$cat_name
+		);
+	} else {
+		$subheading = esc_html__('No results for "'. $query_value .'"', 'due-processed');
+	}
+	/* translators: %s: search query. */
+	printf( normalize_whitespace($subheading) );
+
+}
+
+add_action('after_setup_theme', 'due_processed_get_category_name_header');
+
+function due_processed_get_search_header() {
+	// Custom search results subheading
+	global $wp_query;
+	$posts_found    = $wp_query->found_posts;
+	$query_value = get_search_query( false );
+	if ( $posts_found ) {
+		// # results for "<query>"
+		$subheading = sprintf(
+			esc_html__( '%1$s %2$s for "%3$s"', 'due-processed' ),
+			$posts_found,
+			$posts_found === 1 ? 'result' : 'results',
+			$query_value
+		);
+	} else {
+		$subheading = esc_html__('No results for "'. $query_value .'"', 'due-processed');
+	}
+	/* translators: %s: search query. */
+	printf( normalize_whitespace($subheading) );
+}
+
+add_action('after_setup_theme', 'due_processed_get_search_header');
