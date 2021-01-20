@@ -11,7 +11,14 @@
 This is a simple environment for developing features of the due processed theme. Note:
 
 - WordPress will be available at [http://localhost:8000](http://localhost:8000)
-- The `wp-content` folder you'll find in this repo will be shared with the WordPress installation, you may put plugin code in `wp-content/pluigins`.
+- The `wp-content` folder you'll find in this repo will be shared with the WordPress installation
+- You may put plugin code in `wp-content/pluigins`, however the preferred way for adding plugins is via composer
+- To add a plugin via composer
+	- Search for the plugin on the WP Packagist repository: [https://wpackagist.org/](https://wpackagist.org/)
+	- Copy the name of the plugin you want to install - make sure to use the exact string
+		- For example, assume you want to install the plugin `akismet-notifier`
+	- `cd` into `./due-processed` and install the plugin using the prefix `wpackagist-plugin/` like so: 
+		- `composer require wpackagist-plugin/akismet-notifier`
 
 ## Theme development
 
