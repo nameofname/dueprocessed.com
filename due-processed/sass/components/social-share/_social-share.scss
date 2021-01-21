@@ -33,7 +33,7 @@ $social-share-icon-height: 34px;
 		margin-bottom: $spacing__x-small;
 
 		@include breakpoint-below(tablet-landscape) {
-			margin-botton: 0;
+			margin-bottom: 0;
 			margin-right: $spacing__x-small;
 		}
 	}
