@@ -55,14 +55,12 @@ function due_processed_get_category_name_header() {
 			$cat_name
 		);
 	} else {
-		$subheading = esc_html__('No results for "'. $query_value .'"', 'due-processed');
+		$subheading = esc_html__('No results for "'. $cat_name .'"', 'due-processed');
 	}
 	/* translators: %s: search query. */
 	printf( normalize_whitespace($subheading) );
 
 }
-
-add_action('after_setup_theme', 'due_processed_get_category_name_header');
 
 function due_processed_get_search_header() {
 	// Custom search results subheading
@@ -84,4 +82,20 @@ function due_processed_get_search_header() {
 	printf( normalize_whitespace($subheading) );
 }
 
-add_action('after_setup_theme', 'due_processed_get_search_header');
+function recent_posts() {
+
+    $args = array(
+        'posts_per_page' => 4, /* how many post you need to display */
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_type' => 'post', /* your post type name */
+        'post_status' => 'publish'
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+			echo get_template_part( 'template-parts/content', 'excerpt' );
+        endwhile;
+    endif;
+}

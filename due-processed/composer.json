@@ -32,7 +32,8 @@
     "wpackagist-plugin/full-site-editing": "^2.7",
     "wpackagist-plugin/mailchimp-for-wp": "^4.8",
     "wpackagist-plugin/shared-counts": "^1.3.0",
-    "htmlburger/carbon-fields": "^3.2"
+    "htmlburger/carbon-fields": "^3.2",
+    "wpackagist-plugin/email-encoder-bundle": "^2.1"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",

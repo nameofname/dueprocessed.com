@@ -19,10 +19,7 @@ $email = $curauth->user_email;
 $parts = explode('@', $email);
 $left_parts = str_split($parts[0], 2);
 $right_parts = str_split($parts[1], 2);
-$author_email_parts = array(
-	left_side => $left_parts,
-	right_side => $right_parts
-);
+$author_email_parts = array(left_side => $left_parts, right_side => $right_parts);
 ?>
 
 <main id="primary" class="site-main site-main-author">
@@ -65,32 +62,15 @@ $author_email_parts = array(
 
 			<!-- contact information -->
 			<div class='author-profile-body-right'>
-				<?php if ( get_the_author_meta( 'twitter' )) { ?>
-					<div class='author-profile-contact-info'>
-						<span class="author-profile-icon">
-							<?php get_template_part( 'template-parts/icon', 'twitter' ); ?>
-						</span>
-						<div class='author-profile-twitter'>
-							<?php the_author_meta( 'twitter' ) ?>
-						</div>
-					</div>
-				<?php } ?>
+				<?php if ( get_the_author_meta( 'twitter' )) {
+					get_template_part( 'template-parts/content', 'twitter' );
+				} ?>
 				<div class='author-profile-contact-info'>
 					<span class="author-profile-icon">
 						<?php get_template_part( 'template-parts/icon', 'email' ); ?>
 					</span>
 					<div class='author-profile-email'>
-						<script>
-							function dpMailTo() {
-								const parts = <?php echo json_encode($author_email_parts); ?>;
-								const link = document.getElementById('mailToLink');
-								const href = link.getAttribute('href');
-								const address = parts.left_side.join('') + '@' + parts.right_side.join('');
-								const settings = '?subject=DueProcessed.com+contact'
-								link.setAttribute('target', '_blank');
-								link.setAttribute('href', 'mailto:' + address + settings);
-							}
-						</script>
+						<?php echo get_template_part( 'template-parts/content', 'mailto', $author_email_parts); ?>
 						<a href="#" id="mailToLink" onClick="dpMailTo()">Contact <?php echo $display_name ?></a>
 					</div>
 				</div>

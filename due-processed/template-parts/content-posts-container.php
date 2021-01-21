@@ -1,5 +1,6 @@
 <div class="search-results-wrapper">
-<?php
+	<?php
+		if (have_posts()) {
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -11,6 +12,24 @@
 				 */
 				get_template_part( 'template-parts/content', 'excerpt' );
 			endwhile;
-			the_posts_navigation();
-?>
+		} else {
+			// no search results
+			$args = array(
+				'posts_per_page' => 4, /* how many post you need to display */
+				'offset' => 0,
+				'orderby' => 'post_date',
+				'order' => 'DESC',
+				'post_type' => 'post', /* your post type name */
+				'post_status' => 'publish'
+			);
+			$query = new WP_Query($args);
+			if ($query->have_posts()) :
+				while ($query->have_posts()) :
+					$query->the_post();
+					echo get_template_part( 'template-parts/content', 'excerpt' );
+				endwhile;
+			endif;
+		}
+		the_posts_navigation();
+	?>
 </div>

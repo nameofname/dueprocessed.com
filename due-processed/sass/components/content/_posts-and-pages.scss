@@ -16,9 +16,12 @@
 }
 
 .page-title {
-	margin: 0 0 $spacing__medium;
+	margin: 0 0 $spacing__large;
 	text-align: center;
 	@include font-header($size: large);
+	@include breakpoint-below(tablet-portrait) {
+		margin-bottom: $spacing__small;
+	}
 }
 
 .page-content,

@@ -11,6 +11,7 @@
 .author-profile-body {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	@include breakpoint-below(tablet-portrait) {
 		flex-direction: column;
 	}
@@ -78,7 +79,8 @@
 
 .author-profile-bio {
 	display: inline-block;
-	max-width: 676px;
+	max-width: 900px;
+	width: 100%;
 	vertical-align: top;
 	margin-right: $spacing__large;
 	@include breakpoint-below(tablet-portrait) {
@@ -89,6 +91,7 @@
 
 .author-profile-body-right {
 	white-space: nowrap;
+	width: 300px;
 }
 
 .author-profile-contact-info {
@@ -97,8 +100,7 @@
 
 .author-profile-icon {
 	display: inline-block;
-	height: 20px;
-	width: 20px;
+	width: 22px;
 	vertical-align: middle;
 }
 
