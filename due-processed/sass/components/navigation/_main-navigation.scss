@@ -34,12 +34,12 @@
 				line-height: 60px;
 				margin-right: $spacing__x-large;
 				border-bottom: 3px solid transparent;
-                                cursor: pointer;
+				cursor: pointer;
 
 				&:hover,
 				&.focus {
 					border-bottom: 3px solid $color__link-hover;
-                                        transition: border 0.2s ease;
+					transition: border 0.2s ease;
 				}
 			}
 
@@ -134,7 +134,7 @@
 		position: absolute;
 		width: 100%;
 		background: $color__background-body;
-                height: 100vh;
+		height: 100vh;
 		z-index: 1000;
 		top: 55px;
 		overflow: scroll;
@@ -162,11 +162,11 @@
 					padding: 0;
 				}
 				> .sub-menu {
-                                        .menu-item {
-                                                a {
-                                                        margin-bottom: $spacing__medium;
-                                                }
-                                        }
+					.menu-item {
+						a {
+							margin-bottom: $spacing__medium;
+						}
+					}
 
 					.sub-menu {
 						display: none;

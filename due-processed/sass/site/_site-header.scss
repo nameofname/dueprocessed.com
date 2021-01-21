@@ -1,10 +1,10 @@
 .site-header {
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
 	padding-top: $spacing__small;
-        position: sticky;
-        top: 0;
-        background: $color__background-body;
-        z-index: $z-index__header;
+	position: sticky;
+	top: 0;
+	background: $color__background-body;
+	z-index: $z-index__header;
 
 	a {
 		color: $color__text-main;

@@ -21,7 +21,7 @@
 }
 
 @mixin primary-viewport-width {
-        position: relative;
-        width: 100vw;
-        left: calc((100vw - 100%) / -2);
+	position: relative;
+	width: 100vw;
+	left: calc((100vw - 100%) / -2);
 }
