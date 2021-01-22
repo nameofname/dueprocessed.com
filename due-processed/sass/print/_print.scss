@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+# Shared
+--------------------------------------------------------------*/
+@media not print {
+	.site-print-header {
+		display: none;
+	}
+}
+
+@media print {
+	.site-header {
+		position: relative;
+		display: block;
+		box-shadow: none;
+		border-bottom: 1px solid $color__border;
+		padding-bottom: $spacing__small;
+	}
+
+	.site-header-top,
+	.site-header-bottom {
+		display: none;
+	}
+
+	.site-print-header {
+		@include primary-page-width();
+		display: block;
+	}
+
+	.site-print-branding-link {
+		width: 200px;
+	}
+
+	.edit-link {
+		display: none;
+	}
+
+	.site-footer {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+# Single Post
+--------------------------------------------------------------*/
+@media print {
+	body.single-post {
+		.entry-content {
+			grid-column: 1 / 3;
+		}
+		.shared-counts-wrap,
+		.post-thumbnail {
+			display: none;
+		}
+
+		.footnote-wrapper {
+			.footnote-note {
+				display: none;
+			}
+		}
+
+		.footnotes-footer {
+			display: block;
+		}
+	}
+}

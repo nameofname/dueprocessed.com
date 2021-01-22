@@ -71,6 +71,7 @@ dpfn {
 	justify-content: center;
 	background-color: #e3eff4;
 }
+
 @media (min-width: 769px) {
 	.wp-block-due-processed-custom-paragraph {
 		width: 200vw;

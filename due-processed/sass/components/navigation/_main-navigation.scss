@@ -34,12 +34,12 @@
 				line-height: 60px;
 				margin-right: $spacing__x-large;
 				border-bottom: 3px solid transparent;
+				transition: border 0.3s ease;
 				cursor: pointer;
 
 				&:hover,
 				&.focus {
 					border-bottom: 3px solid $color__link-hover;
-					transition: border 0.2s ease;
 				}
 			}
 

@@ -26,6 +26,11 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'due-processed' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<div class="site-print-header">
+			<div class="site-print-branding-link">
+				<?php get_template_part( 'template-parts/icon', 'logo' ); ?>
+			</div>
+		</div>
 		<div class="site-header-top">
 			<button id="site-navigation-icon" class="main-navigation-icon" aria-controls="primary-menu" aria-expanded="false">
 				<span class="main-navigation-hamburger">

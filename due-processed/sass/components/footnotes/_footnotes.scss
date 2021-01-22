@@ -36,7 +36,7 @@
 	@include font-body($size: small);
 
 	.single-post & {
-		display: inline;
+		display: inline-block;
 	}
 }
 
