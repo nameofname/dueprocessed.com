@@ -38,6 +38,7 @@
   "scripts": {
     "start": "docker-compose up",
     "dev": "npm install && composer install && npm run watch",
+    "docker:sh": "docker exec -it dueprocessedcom_wordpress_1 bash",
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
