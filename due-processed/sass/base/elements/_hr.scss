@@ -4,3 +4,14 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
+
+.wp-block-separator {
+    position: relative;
+	width: calc(100vw - 20px);
+	left: calc((100vw - 100% - 20px) / -2);
+
+	@include breakpoint-above(tablet-landscape) {
+		width: calc(100vw - 100px);
+		left: calc((100vw - 100% - 100px) / -2);
+	}
+}

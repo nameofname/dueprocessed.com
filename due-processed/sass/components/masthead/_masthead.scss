@@ -1,5 +1,3 @@
-$spacing__mobile-masthead-text: 11px;
-
 .masthead-header {
 	@include font-header($size: large);
 	text-align: center;
@@ -39,9 +37,11 @@ $spacing__mobile-masthead-text: 11px;
 
 .masthead-text {
 	@include breakpoint-below(tablet-portrait) {
+		text-align: left;
 		display: inline-block;
 		vertical-align: top;
-		margin-top: $spacing__mobile-masthead-text;
+		margin-top: $spacing__x-small;
+		margin-left: $spacing__small;
 	}
 }
 

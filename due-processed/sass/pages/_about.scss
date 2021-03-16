@@ -5,20 +5,27 @@
 		margin-top: $spacing__small;
 	}
 
+	h1 {
+		margin-bottom: $spacing__medium;
+		@include breakpoint-below(tablet-portrait) {
+			@include font-header($size: small);
+		}
+	}
+
 	h1,
 	h2 {
-		@include font-header($size: large);
 		text-align: center;
 	}
 
-	p {
+	h2 {
+		@include font-header($size: large);
+		margin-bottom: $spacing__medium;
 		@include breakpoint-below(tablet-portrait) {
-			margin-left: $spacing__small;
-			margin-right: $spacing__small;
+			@include font-header($size: small);
 		}
 	}
 
 	.entry-content {
-		max-width: 636px;
+		max-width: $size__content-about-width;
 	}
 }
