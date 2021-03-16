@@ -11,7 +11,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wordpress
-      MYSQL_USER: user
+      MYSQL_USER: hanged_antz
       MYSQL_PASSWORD: password
   wordpress:
     build:
