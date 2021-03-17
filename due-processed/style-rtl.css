@@ -462,13 +462,13 @@ h6 {
 h1 {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
+	line-height: 36px;
 }
 
 h2 {
 	font-size: 2.2rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 36px;
+	line-height: 30px;
 }
 
 h3 {
@@ -562,6 +562,18 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+.wp-block-separator {
+	position: relative;
+	width: calc(100vw - 20px);
+	right: calc((100vw - 100% - 20px) / -2);
+}
+@media (min-width: 769px) {
+	.wp-block-separator {
+		width: calc(100vw - 100px);
+		right: calc((100vw - 100% - 100px) / -2);
+	}
+}
+
 ul,
 ol {
 	margin: 0 3em 1.5em 0;
@@ -623,14 +635,13 @@ table {
 a {
 	color: #005b83;
 	text-decoration: none;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.3s ease;
 }
 a:visited {
 	color: #005b83;
 }
 a:hover {
-	opacity: 0.7;
-	text-decoration: underline;
+	opacity: 0.85;
 }
 a:hover,
 a:focus,
@@ -740,6 +751,12 @@ textarea:focus {
 	color: #151515;
 	border-color: #151515;
 	outline: none;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 select {
@@ -854,7 +871,7 @@ textarea {
 .site-title {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
+	line-height: 36px;
 }
 
 /*--------------------------------------------------------------
@@ -1116,18 +1133,33 @@ textarea {
 	}
 }
 
+.about-container h1 {
+	margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+	.about-container h1 {
+		font-size: 2.2rem;
+		font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+		line-height: 30px;
+	}
+}
+
 .about-container h1,
 .about-container h2 {
-	font-size: 2.8rem;
-	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
 	text-align: center;
 }
 
+.about-container h2 {
+	font-size: 2.8rem;
+	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+	line-height: 36px;
+	margin-bottom: 30px;
+}
 @media (max-width: 768px) {
-	.about-container p {
-		margin-right: 20px;
-		margin-left: 20px;
+	.about-container h2 {
+		font-size: 2.2rem;
+		font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+		line-height: 30px;
 	}
 }
 
@@ -1174,12 +1206,12 @@ textarea {
 	line-height: 60px;
 	margin-left: 50px;
 	border-bottom: 3px solid transparent;
+	transition: border 0.3s ease;
 	cursor: pointer;
 }
 .main-navigation .menu > .menu-item > a:hover,
 .main-navigation .menu > .menu-item > a.focus {
 	border-bottom: 3px solid #005b83;
-	transition: border 0.2s ease;
 }
 .main-navigation .menu > .menu-item:hover > .sub-menu,
 .main-navigation .menu > .menu-item.focus > .sub-menu {
@@ -1433,7 +1465,7 @@ input.search-field {
 .featured-article-header {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
+	line-height: 36px;
 }
 
 .featured-article-lede {
@@ -1512,7 +1544,7 @@ input.search-field {
 	text-align: center;
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
+	line-height: 36px;
 }
 @media (max-width: 768px) {
 	.page-title {
@@ -1600,7 +1632,6 @@ input.search-field {
 		width: 100vw;
 		right: calc((100vw - 100%) / -2);
 		grid-row: 3;
-		margin-top: 20px;
 		margin-bottom: 0;
 	}
 }
@@ -1613,6 +1644,7 @@ input.search-field {
 	grid-row: 3;
 	grid-column: 1 / 3;
 	text-align: center;
+	padding-bottom: 30px;
 }
 @media (max-width: 768px) {
 	.single-post .entry-header {
@@ -1740,7 +1772,7 @@ input.search-field {
 	line-height: 20px;
 }
 .single-post .footnote-wrapper {
-	display: inline;
+	display: inline-block;
 }
 
 .footnote-anchor {
@@ -2009,7 +2041,7 @@ input.search-field {
 .masthead-header {
 	font-size: 2.8rem;
 	font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
-	line-height: 30px;
+	line-height: 36px;
 	text-align: center;
 	margin-bottom: 40px;
 }
@@ -2051,9 +2083,11 @@ input.search-field {
 
 @media (max-width: 768px) {
 	.masthead-text {
+		text-align: right;
 		display: inline-block;
 		vertical-align: top;
-		margin-top: 11px;
+		margin-top: 10px;
+		margin-right: 20px;
 	}
 }
 
@@ -2073,6 +2107,44 @@ input.search-field {
 	font-family: "Lora Regular", georgia, "Times New Roman", times, serif;
 	line-height: 24px;
 	margin: 0;
+}
+
+/* Custom Paragraph Block
+--------------------------------------------- */
+.wp-block-due-processed-custom-paragraph {
+	display: flex;
+	justify-content: center;
+	background-color: #e3eff4;
+	width: 200vw;
+	position: relative;
+	right: calc(-100vw + 50%);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+@media (min-width: 769px) {
+	.wp-block-due-processed-custom-paragraph {
+		font-size: 2.2rem;
+		font-family: "Lora Medium", georgia, "Times New Roman", times, serif;
+		line-height: 30px;
+		line-height: 38px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	margin: 0;
+	max-width: 100vw;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+@media (min-width: 769px) {
+	.wp-block-due-processed-custom-paragraph p {
+		max-width: 636px;
+		padding: 0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2160,21 +2232,72 @@ input.search-field {
 	margin-bottom: 1.5em;
 }
 
-/* Custom paragraph block styles
---------------------------------------------- */
-.wp-block-due-processed-custom-paragraph {
-	display: flex;
-	justify-content: center;
-	background-color: #e3eff4;
-}
-@media (min-width: 769px) {
-	.wp-block-due-processed-custom-paragraph {
-		width: 200vw;
-		position: relative;
-		right: calc(-100vw + 50%);
+/*--------------------------------------------------------------
+# Print
+# Order matters! Print styles must go last
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Shared
+--------------------------------------------------------------*/
+@media not print {
+	.site-print-header {
+		display: none;
 	}
 }
 
-.wp-block-due-processed-custom-paragraph p {
-	width: 636px;
+@media print {
+	.site-header {
+		position: relative;
+		display: block;
+		box-shadow: none;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 20px;
+	}
+	.site-header-top,
+	.site-header-bottom {
+		display: none;
+	}
+	.site-print-header {
+		width: calc(100% - (2 * 60px));
+		max-width: 1440px;
+		margin: 0 auto;
+		display: block;
+	}
+}
+@media print and (max-width: 768px) {
+	.site-print-header {
+		width: calc(100% - (2 * 20px));
+	}
+}
+
+@media print {
+	.site-print-branding-link {
+		width: 200px;
+	}
+	.edit-link {
+		display: none;
+	}
+	.site-footer {
+		display: none;
+	}
+}
+
+/*--------------------------------------------------------------
+# Single Post
+--------------------------------------------------------------*/
+@media print {
+	body.single-post .entry-content {
+		grid-column: 1 / 3;
+	}
+	body.single-post .shared-counts-wrap,
+	body.single-post .post-thumbnail {
+		display: none;
+	}
+	body.single-post .footnote-wrapper .footnote-note {
+		display: none;
+	}
+	body.single-post .footnotes-footer {
+		display: block;
+	}
 }
