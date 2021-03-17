@@ -20,6 +20,28 @@ This is a simple environment for developing features of the due processed theme.
 	- `cd` into `./due-processed` and install the plugin using the prefix `wpackagist-plugin/` like so: 
 		- `composer require wpackagist-plugin/akismet-notifier`
 
+### Working with your Docker env
+
+- All the docker files are in the root of this repo, so to run docker commands you should normally do it from the root
+	- Some helpful docker commands are stored in the package.json located inside the `due-processed` directory which is a quirk of how our repo is set up
+	- Most of the docker commands can also be run from this directory
+- To start your docker env run `docker-compose up`
+- To stop the docker containers, run `docker-compose down`
+- The docker DB container is instructed by docker-compose to import any files that you place inside of the `sql-dumps` directory
+	- To work with an up to date copy of the database you need to export a sql dump from prod
+	- We use the `migrate-db` plugin to do this 
+	- Navigate to the Migrate DB page in the admin on prod (https://dueprocessed.wpcomstaging.com/wp-admin/tools.php?page=wp-migrate-db)
+		- Located at /wp-admin/ --> Tools --> Migrate DB
+	- This page will present options to export a copy of the DB. Download it and place it in your `sql-dumps` folder
+	- Now when you start your env using `docker-compose up` the new copy of the DB will be imported
+	- The other .sql files located in `sql-dumps` will also be applied
+	- Note* that if you have started your env before the new sql dump file will not be imported properly, so to apply the new SQL dump file use the steps below...
+- If you want to trash your env and start over, run the following commands in sequence : 
+	- `docker-compose down --rmi=all` (stop docker containers and remove all of them)
+	- `docker volume prune` (remove any volumes that were associated with the containers you just removed, pertains to old copies of your DB)
+	- `docker-compose up` (recreate everything and start the containers)
+
+
 ## Theme development
 
 - The theme files in `./wp-content/themes/due-processed` are symlinked from `./due-processed`.
