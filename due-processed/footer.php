@@ -40,6 +40,12 @@ $copyright = sprintf( esc_html__( '© %1$s %2$s', 'due-processed' ), date('Y'), 
 					echo $copyright;
 					?>
 				</div>
+				<div class='footer-subscribe-form'>
+					<?php
+						$reusable_block = get_post(214); // you have to manually enter the post id
+						echo apply_filters( 'the_content', $reusable_block->post_content );
+					?>
+				</div>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
