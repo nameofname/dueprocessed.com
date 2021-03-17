@@ -63,3 +63,7 @@ The About page can show a list of contributors to the site. To edit this list, g
 ### Featured Articles
 
 The "Featured Articles" carousel on the home page will display articles with the "featured" tag, in order of publish date. To tag an article, go to the edit view and you should see a "tags" section in the right sidebar. Add a tag by typing it into the text box
+
+### Subscription form 
+
+The subscription form is a reusable block - WP supports a mailchimp form block out of the box which is pretty cool. To edit it you can go to the reusable blocks editor pae (I added a link in the admin) http://localhost:8000/wp-admin/edit.php?post_type=wp_block. See footer.php for code which outputs the block. 
