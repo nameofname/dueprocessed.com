@@ -122,6 +122,15 @@ if ( ! function_exists( 'due_processed_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'due_processed_setup' );
 
+// for debugging 
+function var_error_log($object=null) {
+    ob_start();
+    var_dump($object);
+    $contents = ob_get_contents();
+    ob_end_clean();
+    error_log($contents);
+}
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
