@@ -9,5 +9,6 @@ wp-content/themes/*
 !wp-content/themes/due-processed
 due-processed/vendor/*
 wp-content/plugins/*
+wp-content/cache/*
 settings.json
 *.zip
