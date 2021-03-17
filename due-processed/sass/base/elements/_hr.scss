@@ -9,9 +9,13 @@ hr {
 	position: relative;
 	width: calc(100vw - 20px);
 	left: calc((100vw - 100% - 20px) / -2);
+	margin-bottom: $spacing__x-large;
+	margin-top: $spacing__x-large;
 
 	@include breakpoint-above(tablet-landscape) {
 		width: calc(100vw - 100px);
 		left: calc((100vw - 100% - 100px) / -2);
+		margin-bottom: $spacing__medium;
+		margin-top: $spacing__medium;
 	}
 }
