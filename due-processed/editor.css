@@ -69,3 +69,14 @@ dpfn {
 .wp-block-due-processed-custom-paragraph {
 	background-color: #e3eff4;
 }
+@media (min-width: 769px) {
+	.wp-block-due-processed-custom-paragraph {
+		width: 200vw;
+		position: relative;
+		left: calc(-100vw + 50%);
+	}
+}
+
+.wp-block-due-processed-custom-paragraph p {
+	width: 636px;
+}
